@@ -9,3 +9,9 @@ A website and web application for the Chocolate Milk Mile. event details, photog
 - [ ] Media/Contact
 - [ ] Event registration
   - [ ] Payment for registration (Stripe Elements + API)
+
+## Installation Instructions
+Make sure you're installing this within your Laravel Valet `Sites` directory. This works best.
+
+1. Install all of the composer stuff with `composer install`.
+2. Install all of the NodeJS dependencies with `npm install`.
