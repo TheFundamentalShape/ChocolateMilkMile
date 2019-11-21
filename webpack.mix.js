@@ -20,3 +20,7 @@ mix.js('resources/js/app.js', 'public/js')
             tailwind('tailwind.config.js')
         ]
     });
+
+mix.browserSync({
+    proxy: 'cmm.test'
+});
