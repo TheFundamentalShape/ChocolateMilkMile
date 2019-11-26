@@ -3,7 +3,11 @@
 @tailwind components;
 
 .font-brand {
-  font-family: Farmhand;
+  font-family: "Farmhand";
+}
+
+.font-body {
+  font-family: "Underland Sans";
 }
 
 .font-link {
@@ -11,7 +15,7 @@
 }
 
 .nav-link {
-  @apply font-link text-white mx-4 my-4 text-2xl;
+  @apply font-link text-white mx-4 my-4;
 }
 
 
