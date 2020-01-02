@@ -16,9 +16,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .options({
         processCssUrls: false,
-        postCss: [
-            tailwind('tailwind.config.js')
-        ]
+        postCss: [tailwind('./tailwind.config.js')]
     });
 
 mix.browserSync({

@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+
+// Admin End
+Route::get('/manager', 'ManagementPageController@index');
+
+// User End
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/events/{event}/register', 'EventRegistrationController@get')->name('registration');
+Route::post('/events/{event}/register', 'EventRegistrationController@post')->name('registration.post');
