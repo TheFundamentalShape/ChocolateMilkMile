@@ -27,6 +27,11 @@ $app = new Illuminate\Foundation\Application(
 */
 
 $app->singleton(
+    \App\Billing\PaymentGateway::class,
+    \App\Billing\StripePaymentGateway::class
+);
+
+$app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
     App\Http\Kernel::class
 );

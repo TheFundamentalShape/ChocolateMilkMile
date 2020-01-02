@@ -2,21 +2,21 @@
 
 @tailwind components;
 
+.nav-link {
+  @apply px-6 my-4 text-white;
+  font-family: 'Underland Sans';
+}
+
 .font-brand {
-  font-family: "Farmhand";
+  font-family: Farmhand;
 }
 
 .font-body {
-  font-family: "Underland Sans";
+  font-family: 'Underland Sans';
 }
 
-.font-link {
-  font-family: "Underland Sans";
+.verygood-font {
+  font-family: "Indigo Regular";
 }
-
-.nav-link {
-  @apply font-link text-white mx-4 my-4;
-}
-
 
 @tailwind utilities;
