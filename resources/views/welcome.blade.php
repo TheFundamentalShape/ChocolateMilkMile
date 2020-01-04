@@ -14,7 +14,7 @@
 <div id="navbar" class="bg-chocolate bg-no-repeat bg-cover shadow" style="background-image: url('/img/ripple.png')">
     <h1 class="text-center py-4 text-4xl md:text-5xl lg:text-6xl text-white font-brand">The Chocolate Milk Mile</h1>
     <div class="flex justify-center">
-        <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Home</a>
+        <a href="/" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Home</a>
         <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">About</a>
         <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Contact</a>
         <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Photos</a>
@@ -32,9 +32,9 @@
     </div>
 </div>
 
-<div class="flex justify-between" id="what">
+<div class="md:flex md:justify-between" id="what">
 
-    <div class="pl-48 py-56">
+    <div class="md:pl-48 pl-12 py-56">
         <h2 class="font-brand text-chocolate text-6xl">What is it?!</h2>
         <p class="font-body text-black text-5xl">In The Chocolate Milk Mile, Runners must drink 1 cup of chocolate milk every lap, equaling one half gallon of chocolate milk.</p>
         <p class="font-body text-gray-500 text-2xl">(simply put, it’s just a really great time)</p>
