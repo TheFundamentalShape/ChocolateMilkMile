@@ -34,3 +34,10 @@ Groovy, you already have a copy of this repo downloaded, installed, and running 
 1. Check with GitHub to see if your branch is behind the master branch. You can do this by running `git fetch`.
 2. After fetching the status of the GitHub repo, pull in any changes by running `git pull`.
 3. Once you have the most recent changes, run `npm run watch` and that should compile your CSS and JS files, and generate a live-server that will update in your browser whenever you make a change to your code. (For this feature to work however, your application's parent folder needs to be named `cmm`. Otherwise NPM will become the alcoholic father you never had and will start beating your ass.)
+
+The general workflow will be as follows:
+1. Check for any changes in GitHub (`git fetch`)
+2. Stash any changes you've made (`git stash`)
+3. Pull the changes from GitHub (`git pull`)
+4. Run `git stash pop` to pull your changes out of the Git stash.
+5. Use PhpStorm to fix any merge conflicts (always accept theirs, meaning my changes)

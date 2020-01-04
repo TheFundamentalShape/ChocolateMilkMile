@@ -8,16 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffad7411-f5b7-41dc-a67e-3addcb083556" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Event.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventRegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventRegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_18_055301_create_registrations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_18_055301_create_registrations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/event/confirmation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/event/confirmation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/event/registration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/event/registration.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/registrations.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/registrations.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir/" />
@@ -131,7 +122,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RegistrationConfirmationController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="384">
@@ -139,6 +130,18 @@
               <folding>
                 <element signature="e#40#61#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="637">
+                <caret line="42" column="85" selection-start-line="42" selection-start-column="85" selection-end-line="42" selection-end-column="85" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -205,15 +208,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_18_055301_create_registrations_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_18_183705_create_events_table.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="449">
@@ -255,7 +249,6 @@
         <option value="$PROJECT_DIR$/tests/Unit/StripePaymentGatewayTest.php" />
         <option value="$PROJECT_DIR$/tests/Feature/PaymentProcessingTest.php" />
         <option value="$PROJECT_DIR$/tests/Feature/RegistrationTest.php" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/contact.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
@@ -279,6 +272,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/EventRegistrationController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RegistrationConfirmationController.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -576,7 +570,7 @@
       <workItem from="1577214642345" duration="1358000" />
       <workItem from="1578107318361" duration="48000" />
       <workItem from="1578107748334" duration="9006000" />
-      <workItem from="1578118448438" duration="11784000" />
+      <workItem from="1578118448438" duration="12173000" />
     </task>
     <task id="LOCAL-00001" summary="deleted tests">
       <created>1574366779811</created>
@@ -628,7 +622,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69973000" />
+    <option name="totallyTimeSpent" value="70362000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -643,7 +637,7 @@
     <frame x="0" y="23" width="2560" height="1334" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.56557375" visible="true" weight="0.2386815" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.56557375" visible="true" weight="0.2386815" />
       <window_info id="npm" order="1" side_tool="true" />
       <window_info id="Structure" order="2" sideWeight="0.43442622" side_tool="true" weight="0.23104435" />
       <window_info id="Favorites" order="3" sideWeight="0.3440594" side_tool="true" weight="0.2532189" />
@@ -658,7 +652,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.34702092" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007225" side_tool="true" weight="0.32894737" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.29227054" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.29227054" />
       <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.32962447" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -742,16 +736,6 @@
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/embed.rnc" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1000">
-            <caret line="35" column="373" selection-start-line="35" selection-start-column="373" selection-end-line="35" selection-end-column="373" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1042,6 +1026,16 @@
           <folding>
             <element signature="e#40#61#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="637">
+            <caret line="42" column="85" selection-start-line="42" selection-start-column="85" selection-end-line="42" selection-end-column="85" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
