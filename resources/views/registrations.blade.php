@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-3xl md:text-5xl md:max-w-2xl verygood-font">Hey there {{ Auth::user()->name }}, here is your registration.</h1>
+    <h1 class="text-3xl md:text-5xl md:max-w-2xl verygood-font">Hey there {{ Auth::user()->name }}, here are your registrations.</h1>
 
     @if($registrations->count() > 0)
         @foreach($registrations as $registration)
@@ -12,6 +12,8 @@
                         <p class="text-gray-600 text-lg my-2"><i class="fas fa-calendar-day"></i> {{ $registration->event->formatted_date }}</p>
                         <p class="text-gray-600 text-lg my-2"><i class="fas fa-map-marked-alt"></i> {{ $registration->event->location }}</p>
                         <p class="text-gray-600 text-lg my-2"><i class="fas fa-money-bill-wave"></i> ${{ $registration->event->formatted_price }}</p>
+                        <hr>
+                        <p class="text-gray-600 text-lg my-2">This registration is for <b>{{ $registration->name }}</b> ({{ $registration->email }}).</p>
                     </div>
                     <div class="flex justify-center">
                         <div class="text-center">

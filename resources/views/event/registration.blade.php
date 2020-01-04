@@ -11,8 +11,7 @@
     </div>
 
     <div class="text-lg text-gray-600 mt-8">
-        <p class="my-2">You are registering for the event above as {{ Auth::user()->name }} (<u>{{ Auth::user()->email }}</u>). If you wish to change the information associated with your account, please email <u>support@chocolatemilkmile.com</u>.</p>
-        <p class="my-2">To complete your registration, please provide your payment details below and hit “Register!”</p>
+        <p class="my-2">To complete your registration, please provide the registrant information below, and your payment details, and then hit “Register!”</p>
     </div>
 
     <div class="mt-8">
@@ -26,7 +25,32 @@
                 </div>
             @endif
 
-            <div class="form-row">
+            @if($errors->any())
+                <div class="bg-red-500 rounded p-4 shadow my-2 text-white">
+                    <h3 class="text-xl verygood-font">Something went wrong...</h3>
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <div class="my-4">
+                <label class="text-lg text-gray-600" for="card-element">
+                    Registrant name
+                </label>
+                <input placeholder="John Doe" name="name" class="bg-white rounded py-3 px-4 w-full mt-2 shadow">
+            </div>
+
+            <div class="my-4">
+                <label class="text-lg text-gray-600" for="card-element">
+                    Registrant email
+                </label>
+                <input placeholder="johndoe@gmail.com" name="email" type="email" class="bg-white rounded py-3 px-4 w-full mt-2 shadow">
+            </div>
+
+            <div class="my-4">
 
                 <label class="text-lg text-gray-600" for="card-element">
                     Credit or debit card
@@ -43,7 +67,7 @@
 
             </div>
 
-            <button class="bg-blue-500 hover:bg-blue-700 rounded px-4 py-2 text-white mt-4 shadow">Submit Payment</button>
+            <button class="bg-blue-500 hover:bg-blue-700 w-1/3 rounded px-4 py-2 text-white mt-4 shadow">Register</button>
         </form>
 
         <script>

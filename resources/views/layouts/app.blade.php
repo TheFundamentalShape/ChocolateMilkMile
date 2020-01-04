@@ -26,7 +26,7 @@
 
         <div class="bg-white shadow flex py-6 px-8 justify-between">
             <div>
-                <span class="verygood-font">A Very Good Registration System, Inc.</span>
+                <a href="/home"><span class="verygood-font">A Very Good Registration System, Inc.</span></a>
             </div>
 
             <a class="inline-block md:hidden">|||</a>

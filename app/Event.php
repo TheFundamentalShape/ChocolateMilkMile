@@ -18,10 +18,8 @@ class Event extends Model
      * @param User $user
      * @return Registration
      */
-    public function register(User $user){
-        return $this->registrations()->create([
-            'user_id' => $user->id
-        ]);
+    public function register($registrant){
+        return $this->registrations()->create($registrant);
     }
 
     public function getFormattedPriceAttribute() {

@@ -30,7 +30,17 @@ class EventRegistrationController extends Controller
     }
 
     public function post(Event $event) {
-        $registration = $event->register(Auth::user());
+        $this->validate(request(), [
+            'name' => 'required|string',
+            'email' => 'required|email|unique:registrations',
+            'payment_token' => 'required'
+        ]);
+
+        $registration = $event->register([
+            'name' => \request('name'),
+            'email' => \request('email'),
+            'user_id' => Auth::user()->id
+        ]);
 
         try
         {
@@ -42,9 +52,11 @@ class EventRegistrationController extends Controller
             return back()->with('payment_error', 'Uh-oh! Your payment failed. Try again? If that fails, contact us!');
         }
 
-        return response('event.confirmation', [
-            'registration' => $registration,
-            'event' => $event
-        ]);
+        //return view('event.confirmation', [
+        //    'registration' => $registration,
+        //    'event' => $event
+        //]);
+
+        return redirect()->route('registration.confirmation', [$event, $registration]);
     }
 }

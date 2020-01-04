@@ -20,7 +20,7 @@
     </div>
 
     <div class="mt-8">
-        <a href="/registrations">Go to your registrations.</a>
+        <a class="bg-blue-500 hover:bg-blue-700 w-1/3 rounded px-4 py-2 text-white mt-4 shadow" href="/registrations">Go to your registrations</a>
     </div>
 
 @endsection

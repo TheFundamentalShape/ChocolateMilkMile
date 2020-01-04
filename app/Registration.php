@@ -43,7 +43,10 @@ class Registration extends Model
         return [
             'confirmation_id' => rand(1000, 9999),
             'price' => $this->price,
-            'user' => $this->user()->first()->toArray()
+            'registrant' => [
+                'name' => $this->name,
+                'email' => $this->email
+            ]
         ];
     }
 }
