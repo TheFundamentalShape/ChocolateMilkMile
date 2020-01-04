@@ -23,16 +23,21 @@
 <body class="bg-gray-200">
     <div id="app">
 
-        <div class="bg-white shadow flex py-6 px-8 justify-between">
+        <div class="bg-white flex py-6 px-8 justify-between">
             <div>
                 <span class="verygood-font">A Very Good Registration System, Inc.</span>
             </div>
 
             <a class="inline-block md:hidden">|||</a>
             <div class="hidden md:block">
-                <a class="text-gray-500 hover:text-gray-700 mx-2">Your Registrations</a>
                 <a class="text-gray-500 hover:text-gray-700 mx-2">Hi there, {{ Auth::user()->name }}</a>
             </div>
+        </div>
+
+        <div class="bg-gray-800 py-3 px-8 text-white shadow-lg">
+            <a href="/manager" class="hover:bg-gray-600 hover:shadow rounded py-5 px-4">Admin Home</a>
+            <a href="/manager/events/create" class="hover:bg-gray-600 hover:shadow rounded py-5 px-4">Create a New Event</a>
+            <a href="/manager/registrants" class="hover:bg-gray-600 hover:shadow rounded py-5 px-4">View Registrants</a>
         </div>
 
         <div class="mx-20 my-12">

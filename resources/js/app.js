@@ -20,6 +20,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 // Register components...
+Vue.component('event-list', require('./components/EventList'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

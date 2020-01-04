@@ -19,13 +19,20 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-
-// Admin End
-Route::get('/manager', 'ManagementPageController@index');
-
 // User End
-Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/events/{event}/register', 'EventRegistrationController@get')->name('registration');
 Route::post('/events/{event}/register', 'EventRegistrationController@post')->name('registration.post');
+
+Auth::routes();
+
+// Admin End
+Route::middleware(['manager'])->group(function (){
+    Route::get('/manager', 'ManagementPageController@index');
+
+    Route::get('/manager/events/create', 'EventController@create');
+    Route::post('/manager/events/create', 'EventController@post');
+
+    Route::get('/manager/registrants', 'ManagementPageController@registrants');
+});
