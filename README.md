@@ -23,9 +23,14 @@ Make sure you're installing this within your Laravel Valet `Sites` directory. Th
 
 > Note: If you run `npm run watch` command and it gets all poopy, run it again. It might have had to pull in some random dependency. Try it again and if it fails again, just tell mom. She won't get mad at you. 
 
+#### Fixing those nasty errors
+
+If you get a 500 error when booting your app up for the first time, you're probably missing an `APP_KEY` in your apps `.env` file. Fill this missing key in by running `php artisan key:generate` from the command line, within your app's folder. If that fails, you're probably missing an `.env` file for your app. Simply add a new file called `.env` or just rename `.example.env` to be `.env`. 
+
 ### For an Existing Install (*Which I think you have...*)
 
 Groovy, you already have a copy of this repo downloaded, installed, and running properly! But oh-oh, Louie made yet another change to it! Now what the hell do I do?!
 
 1. Check with GitHub to see if your branch is behind the master branch. You can do this by running `git fetch`.
-2. After fetching the status of the GitHub repo, pull in any changes by running `git pull`
+2. After fetching the status of the GitHub repo, pull in any changes by running `git pull`.
+3. Once you have the most recent changes, run `npm run watch` and that should compile your CSS and JS files, and generate a live-server that will update in your browser whenever you make a change to your code. (For this feature to work however, your application's parent folder needs to be named `cmm`. Otherwise NPM will become the alcoholic father you never had and will start beating your ass.)
