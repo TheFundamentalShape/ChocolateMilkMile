@@ -16,6 +16,35 @@
     </div>
 
     <div class="mt-8">
+        <form action="/events/{{ $event->id }}/register" method="post" id="payment-form">
+
+            @csrf
+
+            @if(\Illuminate\Support\Facades\Session::has('payment_error'))
+                <div class="bg-red-500 rounded p-4 shadow my-2 text-white">
+                    <h3>{{ \Illuminate\Support\Facades\Session::get('payment_error') }}</h3>
+                </div>
+            @endif
+
+            <div class="form-row">
+
+                <label class="text-lg text-gray-600" for="card-element">
+                    Credit or debit card
+                </label>
+
+                <div class="bg-white rounded p-4 mt-2 shadow">
+                    <div id="card-element" style="">
+                        <!-- A Stripe Element will be inserted here. -->
+                    </div>
+                </div>
+
+                <!-- Used to display Element errors. -->
+                <div id="card-errors" role="alert"></div>
+
+            </div>
+
+            <button class="bg-blue-500 hover:bg-blue-700 rounded px-4 py-2 text-white mt-4 shadow">Submit Payment</button>
+        </form>
 
         <script>
             // Set your publishable key: remember to change this to your live publishable key in production
@@ -60,7 +89,7 @@
                 var form = document.getElementById('payment-form');
                 var hiddenInput = document.createElement('input');
                 hiddenInput.setAttribute('type', 'hidden');
-                hiddenInput.setAttribute('name', 'stripeToken');
+                hiddenInput.setAttribute('name', 'payment_token');
                 hiddenInput.setAttribute('value', token.id);
                 form.appendChild(hiddenInput);
 
@@ -69,24 +98,6 @@
             }
 
         </script>
-
-        <form action="/charge" method="post" id="payment-form">
-            <div class="form-row">
-                <label for="card-element">
-                    Credit or debit card
-                </label>
-                <div id="card-element" style="">
-                    <!-- A Stripe Element will be inserted here. -->
-                </div>
-
-                <!-- Used to display Element errors. -->
-                <div id="card-errors" role="alert"></div>
-            </div>
-
-            <button>Submit Payment</button>
-        </form>
-
-        <script src="https://js.stripe.com/v3/"></script>
 
     </div>
 

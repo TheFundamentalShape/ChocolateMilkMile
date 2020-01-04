@@ -20,9 +20,11 @@ Route::get('/contact', function () {
 });
 
 // User End
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->middleware('registered')->name('home');
 
-Route::get('/events/{event}/register', 'EventRegistrationController@get')->name('registration');
+Route::get('/registrations', 'EventRegistrationController@index')->name('registration.index');
+
+Route::get('/events/{event}/register', 'EventRegistrationController@get')->name('registration.create');
 Route::post('/events/{event}/register', 'EventRegistrationController@post')->name('registration.post');
 
 Auth::routes();

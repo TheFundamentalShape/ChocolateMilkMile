@@ -1,73 +1,77 @@
-@extends('layouts.app')
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Chocolate Milk Mile</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="https://use.typekit.net/suf2eff.css">
+</head>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<body>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<div id="navbar" class="bg-chocolate bg-no-repeat bg-cover shadow" style="background-image: url('/img/ripple.png')">
+    <h1 class="text-center py-4 text-4xl md:text-5xl lg:text-6xl text-white font-brand">The Chocolate Milk Mile</h1>
+    <div class="flex justify-center">
+        <a href="/" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Home</a>
+        <a href="/" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">About</a>
+        <a href="/contact" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Contact</a>
+        <a href="/" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Photos</a>
+        <a href="/register" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Register</a>
     </div>
 </div>
-@endsection
+
+<div id="what" class="relative">
+
+    <div class="flex justify-center">
+        <div class="text-center w-64 md:w-1/2 lg:w-1/2 mt-16 lg:mt-24">
+            <h1 class="text-chocolate font-brand text-5xl md:text-6xl">Welcome back! Please login!</h1>
+        </div>
+    </div>
+
+    <div class="flex justify-center">
+        <form class="max-w-sm md:max-w-4xl" action="/login" method="post">
+
+            @csrf
+
+            @if ($errors->any())
+                <div class="bg-active-yellow rounded shadow-2xl p-4 mt-4">
+                    <h1 class="font-brand text-2xl">Hmm... Something went wrong.</h1>
+                    <ul class="list-disc pl-5">
+                        @foreach ($errors->all() as $error)
+                            <li class="font-body font-xl">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <div class="my-8">
+                <div>
+                    <label class="font-body text-3xl pr-12" for="">What is your email?</label>
+                </div>
+                <input class="border rounded p-2 w-full" type="email" name="email">
+            </div>
+
+            <div class="my-8">
+                <div>
+                    <label class="font-body text-3xl pr-12" for="">What is your password?</label>
+                </div>
+                <input class="border rounded p-2 w-full" type="password" name="password">
+            </div>
+
+            <div class="my-8 flex justify-between">
+                <div class="pr-4">
+                    <button type="submit" class="inline-block rounded px-12 py-3 font-body text-2xl text-white bg-chocolate hover:bg-dark-chocolate hover:text-active-yellow">Next!</button>
+                </div>
+                <p class="font-body md:max-w-md text-gray-500 md:text-2xl">By clicking Next, you will be brought to the a good event registration system to complete the registration process for this event.</p>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

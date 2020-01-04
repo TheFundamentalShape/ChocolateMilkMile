@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Billing\PaymentGateway;
 use App\Exceptions\PaymentFailedException;
+use App\Registration;
 use Illuminate\Http\Request;
 use App\Event;
 use Illuminate\Support\Facades\Auth;
@@ -17,12 +18,18 @@ class EventRegistrationController extends Controller
         $this->paymentGateway = $paymentGateway;
     }
 
+    public function index()
+    {
+        return view('registrations', [
+            'registrations' => Auth::user()->registrations()->confirmed()->get()
+        ]);
+    }
+
     public function get(Event $event) {
         return view('event.registration', ['event' => $event]);
     }
 
     public function post(Event $event) {
-
         $registration = $event->register(Auth::user());
 
         try
@@ -32,13 +39,12 @@ class EventRegistrationController extends Controller
         catch (PaymentFailedException $exception)
         {
             $registration->cancel();
-            return response([], 422);
+            return back()->with('payment_error', 'Uh-oh! Your payment failed. Try again? If that fails, contact us!');
         }
 
-        return response([
-            'confirmation_number' => $registration->confirmation_number,
-            'confirmed_at' => $registration->confirmed_at,
-            'registrant' => $registration->user()->first()->toArray()
-        ], 201);
+        return response('event.confirmation', [
+            'registration' => $registration,
+            'event' => $event
+        ]);
     }
 }

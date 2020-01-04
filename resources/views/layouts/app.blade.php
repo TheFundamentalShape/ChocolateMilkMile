@@ -16,6 +16,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <script src="https://kit.fontawesome.com/825a6bb202.js" crossorigin="anonymous"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,13 +31,15 @@
 
             <a class="inline-block md:hidden">|||</a>
             <div class="hidden md:block">
-                <a class="text-gray-500 hover:text-gray-700 mx-2">Your Registrations</a>
+                <a href="/registrations" class="text-gray-500 hover:text-gray-700 mx-2">Your Registrations <span class='px-2 py-1 bg-blue-500 rounded-full text-white'>{{ Auth::user()->registrations()->confirmed()->count() }}</span></a>
                 <a class="text-gray-500 hover:text-gray-700 mx-2">Hi there, {{ Auth::user()->name }}</a>
             </div>
         </div>
 
-        <div class="mx-20 my-12">
-            @yield('content')
+        <div class="mx-20 my-12 flex justify-center">
+            <div class="max-w-2xl">
+                @yield('content')
+            </div>
         </div>
 
     </div>

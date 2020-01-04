@@ -29,6 +29,11 @@ class Registration extends Model
         ]);
     }
 
+    public function scopeConfirmed($query)
+    {
+        return $query->where('confirmed_at', '!=', null);
+    }
+
     public function getPriceAttribute() {
         return $this->event()->first()->fee;
     }
