@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Chocolate Milk Mile</title>
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="https://use.typekit.net/suf2eff.css">
 </head>
 
 <body>
@@ -15,10 +16,10 @@
     <h1 class="text-center py-4 text-4xl md:text-5xl lg:text-6xl text-white font-brand">The Chocolate Milk Mile</h1>
     <div class="flex justify-center">
         <a href="/" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Home</a>
-        <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">About</a>
-        <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Contact</a>
-        <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Photos</a>
-        <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Register</a>
+        <a href="/" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">About</a>
+        <a href="/contact" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Contact</a>
+        <a href="/" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Photos</a>
+        <a href="/register" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Register</a>
     </div>
 </div>
 
@@ -32,32 +33,34 @@
     </div>
 </div>
 
-<div class="md:flex md:justify-between" id="what">
+<div class="md:flex md:justify-center" id="what">
 
-    <div class="md:pl-48 pl-12 py-56">
-        <h2 class="font-brand text-chocolate text-6xl">What is it?!</h2>
-        <p class="font-body text-black text-5xl">In The Chocolate Milk Mile, Runners must drink 1 cup of chocolate milk every lap, equaling one half gallon of chocolate milk.</p>
+    <div class="md:ml-20 p-12 mt-16 mb-16">
+        <h2 class="font-brand text-chocolate text-6xl">What is this?!</h2>
+        <p class="font-body text-black text-5xl">In The Chocolate Milk Mile, all runners must drink 1 cup of chocolate milk upon completion of every lap, equaling a half gallon of chocolate milk in total!</p>
         <p class="font-body text-gray-500 text-2xl">(simply put, it’s just a really great time)</p>
     </div>
 
     <div class="">
-        <img class="" src="/img/milk.png" alt="">
+        <img class="hidden md:block" src="/img/milk.png" alt="A glass of thick, creamy, delicious chocolate milk.">
     </div>
 
 </div>
 
-<div class="bg-chocolate p-20 text-center bg-no-repeat bg-cover" style="background-image: url('/img/ripple.png')">
-    <h1 class="font-body text-white text-6xl">This race is being put on to celebrate the life of Noah Farrelly, who loved running.</h1>
-    <p class="font-body text-white text-4xl">All of the money (that we don’t spend on chocolate milk) will be donated to his family.</p>
+<div class="flex justify-center bg-chocolate p-20 text-center bg-no-repeat bg-cover" style="background-image: url('/img/ripple.png')">
+    <div class="max-w-3xl">
+        <h1 class="font-body text-white lg:text-6xl md:text-5xl text-4xl">This race is being put on to celebrate the life of Noah Farrelly, who loved running.</h1>
+        <p class="font-body text-white lg:text-4xl md:text-3xl text-2xl">All of the money (that we don’t spend on chocolate milk) will be donated to his family.</p>
+    </div>
 </div>
 
-<div id="prizes">
+<div class="md:flex md:justify-center" id="prizes">
 
-    <div class="pl-2 py-56">
-        <img class="" src="/img/splash.png" alt="">
+    <div class="md:ml-20 p-12 mt-16 mb-16">
+        <img class="-ml-48" src="/img/splash.png" alt="">
     </div>
 
-    <div class="">
+    <div>
         <h2 class="font-brand text-chocolate text-6xl">Are there prizes?</h2>
         <p class="font-body text-black text-5xl">Of course! The top 5 places in the race will receive a t-shirt and some sweet bragging rights.</p>
     </div>

@@ -7,18 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Chocolate Milk Mile</title>
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="https://use.typekit.net/suf2eff.css">
 </head>
 
 <body>
 
-<div id="navbar" class="bg-chocolate">
+<div id="navbar" class="bg-chocolate bg-no-repeat bg-cover shadow" style="background-image: url('/img/ripple.png')">
     <h1 class="text-center py-4 text-4xl md:text-5xl lg:text-6xl text-white font-brand">The Chocolate Milk Mile</h1>
     <div class="flex justify-center">
-        <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Home</a>
-        <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">About</a>
-        <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Contact</a>
-        <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Photos</a>
-        <a class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Register</a>
+        <a href="/" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Home</a>
+        <a href="/" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">About</a>
+        <a href="/contact" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Contact</a>
+        <a href="/" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Photos</a>
+        <a href="/register" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Register</a>
     </div>
 </div>
 
