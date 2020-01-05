@@ -27,6 +27,7 @@ class CreateRegistrationsTable extends Migration
             $table->timestamps();
             $table->timestamp('confirmed_at')->nullable();
             $table->bigInteger('confirmation_number')->nullable();
+            $table->timestamp('checked_in_at')->nullable();
         });
     }
 
