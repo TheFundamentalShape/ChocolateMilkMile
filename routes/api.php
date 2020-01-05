@@ -29,11 +29,16 @@ Route::get('/confirmation/{confirmationNumber}', function ($confirmationNumber){
 });
 
 Route::post('/checkin', function (Request $request){
-    $registration = Registration::where('confirmation_number', $request->confirmation_number)->firstOrFail()->checkIn();
-    $event = $registration->event;
-
-    return [
-        'registration' => $registration,
-        'event' => $event
-    ];
+    try {
+        $registration = Registration::where('confirmation_number', $request->confirmation_number)->firstOrFail()->checkIn();
+        $event = $registration->event;
+        return [
+            'registration' => $registration,
+            'event' => $event
+        ];
+    } catch (\App\Exceptions\AlreadyCheckedInException $exception){
+        return response([
+            'error' => 'You are already checked in.',
+        ], 422);
+    }
 });

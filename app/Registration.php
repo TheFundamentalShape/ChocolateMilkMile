@@ -4,7 +4,7 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use App\ConfirmationIssuer;
+use App\Exceptions\AlreadyCheckedInException;
 
 class Registration extends Model
 {
@@ -30,9 +30,14 @@ class Registration extends Model
     }
 
     public function checkIn() {
-        $this->checked_in_at = Carbon::now();
-        $this->save();
-        return $this;
+        if($this->checked_in_at == null) {
+            $this->checked_in_at = Carbon::now();
+            $this->save();
+            return $this;
+        }
+
+        throw new AlreadyCheckedInException();
+
     }
 
     public function scopeConfirmed($query)
