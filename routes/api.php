@@ -28,11 +28,8 @@ Route::get('/confirmation/{confirmationNumber}', function ($confirmationNumber){
     ];
 });
 
-Route::post('/confirmation/{confirmationNumber}/checkin', function ($confirmationNumber){
-    $registration = Registration::where('confirmation_number', $confirmationNumber)->firstOrFail();
-
-    $registration->checkIn();
-
+Route::post('/checkin', function (Request $request){
+    $registration = Registration::where('confirmation_number', $request->confirmation_number)->firstOrFail()->checkIn();
     $event = $registration->event;
 
     return [

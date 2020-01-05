@@ -32,6 +32,7 @@ class Registration extends Model
     public function checkIn() {
         $this->checked_in_at = Carbon::now();
         $this->save();
+        return $this;
     }
 
     public function scopeConfirmed($query)
@@ -48,6 +49,7 @@ class Registration extends Model
         return [
             'confirmation_number' => $this->confirmation_number,
             'price' => $this->price,
+            'checked_in_at' => $this->checked_in_at,
             'registrant' => [
                 'name' => $this->name,
                 'email' => $this->email

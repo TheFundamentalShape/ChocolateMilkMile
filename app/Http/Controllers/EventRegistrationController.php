@@ -15,6 +15,7 @@ class EventRegistrationController extends Controller
 
     public function __construct(PaymentGateway $paymentGateway)
     {
+        $this->middleware('auth');
         $this->paymentGateway = $paymentGateway;
     }
 

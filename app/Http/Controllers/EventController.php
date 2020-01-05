@@ -8,6 +8,11 @@ use Carbon\Carbon;
 
 class EventController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('manager');
+    }
+
     public function create()
     {
         return view('admin.create-event');

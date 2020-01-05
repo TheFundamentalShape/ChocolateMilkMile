@@ -54,7 +54,17 @@ const app = new Vue({
                     this.event = response.data.event;
                     this.registration = response.data.registration;
                 });
+        },
+
+        updateRegistration () {
+            axios
+                .post('/api/checkin', {
+                    'confirmation_number': this.registration.confirmation_number
+                })
+                .then(response => {this.registration = response.data.registration;});
         }
+
+
 
     }
 });

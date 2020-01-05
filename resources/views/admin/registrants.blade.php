@@ -12,7 +12,7 @@
 
         </div>
 
-        <registration-information v-bind:registration="registration" v-bind:event="event"></registration-information>
+        <registration-information @checked-in="updateRegistration" v-bind:registration="registration" v-bind:event="event"></registration-information>
 
     </div>
 @endsection
