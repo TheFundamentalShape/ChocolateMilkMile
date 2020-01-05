@@ -38,6 +38,7 @@ Vue.use(axios);
 const app = new Vue({
     el: '#app',
     data: {
+        confirmation_number: null,
         registration: null,
         event: null,
         errors: null
@@ -48,11 +49,17 @@ const app = new Vue({
     },
     methods: {
         onDecode (confirmationNumber) {
+            this.confirmation_number = confirmationNumber;
             axios
-                .get('/api/confirmation/' + confirmationNumber)
+                .get('/api/confirmation/' + this.confirmation_number)
                 .then(response => {
                     this.event = response.data.event;
                     this.registration = response.data.registration;
+                })
+                .catch(error => {
+
+                    alert('That is not a valid confirmation number. Please try again.');
+
                 });
         },
 

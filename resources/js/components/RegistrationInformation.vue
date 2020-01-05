@@ -11,7 +11,7 @@
         <div class="mt-4">
             <p class="text-sm text-gray-500">Ensure the registrant has been given the proper items including a bib and a shirt if they paid for it. See the event details above for more information.</p>
             <button v-if="registration.checked_in_at == null" class="bg-blue-500 hover:bg-blue-700 rounded shadow text-white text-2xl px-6 py-3 w-full mt-8" @click="checkIn(registration.confirmation_number)">Check in!</button>
-            <div v-if="registration.checked_in_at !== null" class="mt-4 bg-green-500 rounded shadow text-lg p-4">
+            <div v-if="registration.checked_in_at !== null" class="mt-4 bg-green-500 rounded shadow text-white text-lg p-4">
                 This registrant has been checked in!
             </div>
         </div>
