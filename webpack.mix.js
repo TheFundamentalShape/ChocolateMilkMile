@@ -20,5 +20,6 @@ mix.js('resources/js/app.js', 'public/js')
     });
 
 mix.browserSync({
-    proxy: 'cmm.test'
+    proxy: 'https://cmm.test',
+    https: true,
 });

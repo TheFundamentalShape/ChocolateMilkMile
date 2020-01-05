@@ -13,14 +13,12 @@ window.Vue = require('vue');
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * Eg. ./components/RegistrationInfo.vue -> <example-component></example-component>
  */
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-// Register components...
-Vue.component('event-list', require('./components/EventList'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -28,6 +26,35 @@ Vue.component('event-list', require('./components/EventList'));
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import { QrcodeStream } from 'vue-qrcode-reader';
+import RegistrationInformation from './components/RegistrationInformation';
+
+import axios from 'axios';
+
+Vue.use(axios);
+
+// Vue.component('registration-information', require('./components/RegistrationInformation').default);
+
 const app = new Vue({
     el: '#app',
+    data: {
+        registration: null,
+        event: null,
+        errors: null
+    },
+    components: {
+        'RegistrationInformation' : RegistrationInformation,
+        QrcodeStream,
+    },
+    methods: {
+        onDecode (confirmationNumber) {
+            axios
+                .get('/api/confirmation/' + confirmationNumber)
+                .then(response => {
+                    this.event = response.data.event;
+                    this.registration = response.data.registration;
+                });
+        }
+
+    }
 });

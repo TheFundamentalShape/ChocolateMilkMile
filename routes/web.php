@@ -24,10 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/registrations', 'EventRegistrationController@index')->name('registration.index');
 Route::get('/events/{event}/register', 'EventRegistrationController@get')->name('registration');
 Route::post('/events/{event}/register', 'EventRegistrationController@post')->name('registration.post');
-
-
 Route::get('/events/{event}/registrations/{registration}/confirmation', 'RegistrationConfirmationController@get')->name('registration.confirmation');
-
 
 Auth::routes();
 

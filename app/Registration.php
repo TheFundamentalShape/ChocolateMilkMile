@@ -29,6 +29,11 @@ class Registration extends Model
         ]);
     }
 
+    public function checkIn() {
+        $this->checked_in_at = Carbon::now();
+        $this->save();
+    }
+
     public function scopeConfirmed($query)
     {
         return $query->where('confirmed_at', '!=', null);
@@ -41,7 +46,7 @@ class Registration extends Model
     public function toArray()
     {
         return [
-            'confirmation_id' => rand(1000, 9999),
+            'confirmation_number' => $this->confirmation_number,
             'price' => $this->price,
             'registrant' => [
                 'name' => $this->name,
