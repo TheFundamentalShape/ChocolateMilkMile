@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use App\Registration;
+use App\Event;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -41,4 +43,12 @@ Route::post('/checkin', function (Request $request){
             'error' => 'You are already checked in.',
         ], 422);
     }
+});
+
+Route::get('/events', function (){
+    return Event::all();
+});
+
+Route::post('/registrants', function (Request $request){
+    return Registration::confirmed()->where('event_id', $request->event_id)->get();
 });

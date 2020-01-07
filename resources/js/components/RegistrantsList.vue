@@ -1,5 +1,5 @@
 <template>
-    <div @event-selected="showEventRegistrants">
+    <div>
 
     </div>
 </template>
@@ -7,10 +7,15 @@
 <script>
     export default {
         name: "RegistrantsList",
-        methods: {
-            showEventRegistrants() {
-
+        data() {
+            return {
+                event: null
             }
+        },
+        created() {
+            this.$on('event-selected', event => {
+                console.log(event);
+            });
         }
     }
 </script>
