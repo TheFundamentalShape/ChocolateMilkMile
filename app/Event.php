@@ -29,4 +29,17 @@ class Event extends Model
     public function getFormattedDateAttribute() {
         return $this->date->toFormattedDateString();
     }
+
+    public function toArray()
+    {
+        return [
+            'title' => $this->title,
+            'fee' => $this->fee,
+            'location' => $this->location,
+            'dates' => [
+                'human' => $this->formatted_date,
+                'full' => $this->date
+            ]
+        ];
+    }
 }

@@ -11,6 +11,16 @@
 |
 */
 
+use App\Registration;
+
 Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
+});
+
+Broadcast::channel('registration.{registration}', function($user, Registration $registration){
+    return true;
+});
+
+Broadcast::channel('registrations', function ($user){
+    return true;
 });

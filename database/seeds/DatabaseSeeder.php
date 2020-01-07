@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\User;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +13,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        factory(User::class)->state('admin')->create([
+            'email' => 'him@theluigi.com',
+        ]);
+
+        \App\Event::create([
+            'title' => 'Chocolate Milk Mile',
+            'fee' => 1500,
+            'location' => "BHBL High School",
+            'date' => Carbon\Carbon::parse("+3 months")
+        ]);
     }
 }

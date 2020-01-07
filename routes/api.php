@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use App\Registration;
 use App\Event;
 
+use App\Events\RegistrantCheckedIn;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,13 +17,9 @@ use App\Event;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
 Route::get('/confirmation/{confirmationNumber}', function ($confirmationNumber){
     $registration = Registration::where('confirmation_number', $confirmationNumber)->firstOrFail();
-
     $event = $registration->event;
 
     return [
@@ -30,25 +28,11 @@ Route::get('/confirmation/{confirmationNumber}', function ($confirmationNumber){
     ];
 });
 
-Route::post('/checkin', function (Request $request){
-    try {
-        $registration = Registration::where('confirmation_number', $request->confirmation_number)->firstOrFail()->checkIn();
-        $event = $registration->event;
-        return [
-            'registration' => $registration,
-            'event' => $event
-        ];
-    } catch (\App\Exceptions\AlreadyCheckedInException $exception){
-        return response([
-            'error' => 'You are already checked in.',
-        ], 422);
-    }
-});
 
 Route::get('/events', function (){
     return Event::all();
 });
 
-Route::post('/registrants', function (Request $request){
-    return Registration::confirmed()->where('event_id', $request->event_id)->get();
+Route::middleware('auth:api')->get('/registrations', function (Request $request){
+    return $request->user()->registrations()->get();
 });

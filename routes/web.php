@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -34,7 +36,12 @@ Route::get('/events/{event}/register', 'EventRegistrationController@get')->name(
 Route::post('/events/{event}/register', 'EventRegistrationController@post')->name('registration.post');
 Route::get('/events/{event}/registrations/{registration}/confirmation', 'RegistrationConfirmationController@get')->name('registration.confirmation');
 
+Route::get('/getreg/{registration}', function(\App\Registration $registration){
+    return (new App\Mail\RegistrationConfirmed($registration))->render();
+});
+
 Auth::routes();
+Broadcast::routes();
 
 // Admin End
 Route::middleware(['manager'])->group(function (){
@@ -43,4 +50,27 @@ Route::middleware(['manager'])->group(function (){
     Route::post('/manager/events/create', 'EventController@post');
     Route::get('/manager/check-in', 'ManagementPageController@checkin');
     Route::get('/manager/registrants', 'RegistrantController@index');
+
+    Route::post('/manager/registrants', function (Request $request){
+        return App\Registration::confirmed()->where('event_id', $request->event_id)->get();
+    });
+
+    Route::post('/manager/check-in', function (Request $request){
+        try {
+            $registration = App\Registration::where('confirmation_number', $request->confirmation_number)->firstOrFail()->checkIn();
+            $event = $registration->event;
+
+            event(new App\Events\RegistrantCheckedIn($registration));
+
+            return [
+                'registration' => $registration,
+                'event' => $event
+            ];
+        } catch (\App\Exceptions\AlreadyCheckedInException $exception){
+            return response([
+                'error' => 'You are already checked in.',
+            ], 422);
+        }
+    });
+
 });

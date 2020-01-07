@@ -20,6 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body class="bg-gray-200">
     <div id="app">
@@ -43,5 +44,7 @@
         </div>
 
     </div>
+    <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>

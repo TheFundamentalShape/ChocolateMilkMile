@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\RegistrantCheckedIn;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use App\Exceptions\AlreadyCheckedInException;
@@ -31,8 +32,11 @@ class Registration extends Model
 
     public function checkIn() {
         if($this->checked_in_at == null) {
-            $this->checked_in_at = Carbon::now();
-            $this->save();
+
+            $this->update([
+                'checked_in_at' => Carbon::now()
+            ]);
+
             return $this;
         }
 
@@ -58,7 +62,8 @@ class Registration extends Model
             'registrant' => [
                 'name' => $this->name,
                 'email' => $this->email
-            ]
+            ],
+            'event' => $this->event
         ];
     }
 }

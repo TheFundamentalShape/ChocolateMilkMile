@@ -2,9 +2,38 @@
 
 @tailwind components;
 
+
+@font-face {
+  font-family: 'past_dueregular';
+  src: url('/fonts/pastduedemo.woff2') format('woff2'),
+  url('/fonts/pastduedemo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'underland_sansregular';
+  src: url('/fonts/underland_sans.woff2') format('woff2'),
+  url('/fonts/underland_sans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'indigo_regularregular';
+  src: url('/fonts/indigo_regular.woff2') format('woff2'),
+  url('/fonts/indigo_regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
 .nav-link {
-  @apply px-6 my-4 text-white;
-  font-family: 'Underland Sans';
+  @apply px-4 my-4 text-white;
+  font-family: 'underland_sansregular';
 }
 
 .font-brand {
@@ -12,11 +41,17 @@
 }
 
 .font-body {
-  font-family: 'Underland Sans';
+  font-family: 'underland_sansregular';
 }
 
 .verygood-font {
-  font-family: "Indigo Regular";
+  font-family: "indigo_regularregular";
+}
+
+.paid-banner {
+  font-family: 'past_dueregular';
+  color: #a92a25;
+  transform: rotate(-10deg);
 }
 
 @tailwind utilities;

@@ -29,7 +29,6 @@
         methods: {
             checkIn(confirmation_number) {
                 this.$emit('checked-in', confirmation_number)
-                // axios.post('/api/checkin', {'confirmation_number': confirmation_number }).then(response => {registration = response.data.registration;});
             }
         }
     }

@@ -30,12 +30,15 @@ import { QrcodeStream } from 'vue-qrcode-reader';
 import RegistrationInformation from './components/RegistrationInformation';
 import RegistrantsList from './components/RegistrantsList';
 import EventList from './components/EventList';
+import UserRegistrations from './components/UserRegistrations';
+import VueQrcode from '@chenfengyuan/vue-qrcode';
 
 import axios from 'axios';
 
 Vue.use(axios);
 
 // Vue.component('registration-information', require('./components/RegistrationInformation').default);
+Vue.component(VueQrcode.name, VueQrcode);
 
 const app = new Vue({
     el: '#app',
@@ -43,12 +46,14 @@ const app = new Vue({
         confirmation_number: null,
         registration: null,
         event: null,
-        errors: null
+        errors: null,
+        api_key: null
     },
     components: {
         'RegistrationInformation' : RegistrationInformation,
         'RegistrantsList': RegistrantsList,
         'EventList': EventList,
+        'UserRegistrations': UserRegistrations,
         QrcodeStream,
     },
     methods: {
@@ -69,13 +74,15 @@ const app = new Vue({
 
         updateRegistration () {
             axios
-                .post('/api/checkin', {
+                .post('/manager/check-in', {
                     'confirmation_number': this.registration.confirmation_number
                 })
-                .then(response => {this.registration = response.data.registration;});
+                .then(response => {this.registration = response.data.registration});
         }
 
 
 
     }
 });
+
+app.api_key = document.getElementById();
