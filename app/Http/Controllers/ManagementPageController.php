@@ -19,9 +19,9 @@ class ManagementPageController extends Controller
         ]);
     }
 
-    public function registrants()
+    public function checkin()
     {
-        return view('admin.registrants', [
+        return view('admin.checkin', [
             'events' => Event::all()
         ]);
     }

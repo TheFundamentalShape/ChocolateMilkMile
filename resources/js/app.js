@@ -28,6 +28,8 @@ window.Vue = require('vue');
 
 import { QrcodeStream } from 'vue-qrcode-reader';
 import RegistrationInformation from './components/RegistrationInformation';
+import RegistrantsList from './components/RegistrantsList';
+import EventList from './components/EventList';
 
 import axios from 'axios';
 
@@ -45,6 +47,8 @@ const app = new Vue({
     },
     components: {
         'RegistrationInformation' : RegistrationInformation,
+        'RegistrantsList': RegistrantsList,
+        'EventList': EventList,
         QrcodeStream,
     },
     methods: {

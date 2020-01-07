@@ -37,5 +37,6 @@ Route::middleware(['manager'])->group(function (){
     Route::get('/manager', 'ManagementPageController@index');
     Route::get('/manager/events/create', 'EventController@create');
     Route::post('/manager/events/create', 'EventController@post');
-    Route::get('/manager/registrants', 'ManagementPageController@registrants');
+    Route::get('/manager/check-in', 'ManagementPageController@checkin');
+    Route::get('/manager/registrants', 'RegistrantController@index');
 });
