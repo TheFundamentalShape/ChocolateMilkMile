@@ -23,6 +23,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/photos', function () {
+    return view('photos');
+});
+
 // User End
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/registrations', 'EventRegistrationController@index')->name('registration.index');

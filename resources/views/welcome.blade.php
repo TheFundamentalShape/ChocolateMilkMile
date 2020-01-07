@@ -18,7 +18,7 @@
         <a href="/" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Home</a>
         <a href="/about" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">About</a>
         <a href="/contact" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Contact</a>
-        <a href="/" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Photos</a>
+        <a href="/photos" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Photos</a>
         <a href="/register" class="inline-block text-2xl md:text-3xl lg:text-4xl nav-link hover:underline hover:text-active-yellow">Register</a>
     </div>
 </div>
