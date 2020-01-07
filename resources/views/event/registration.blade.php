@@ -73,7 +73,7 @@
         <script>
             // Set your publishable key: remember to change this to your live publishable key in production
             // See your keys here: https://dashboard.stripe.com/account/apikeys
-            var stripe = Stripe('pk_test_npgHJYXNKJ7Z0bm9RkGGUQa600nY0T59kW');
+            var stripe = Stripe({{ env('STRIPE_KEY') }});
             var elements = stripe.elements();
 
             // Custom styling can be passed to options when creating an Element.
