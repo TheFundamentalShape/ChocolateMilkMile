@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div id="hero" class="h-full bg-center bg-no-repeat bg-cover bg-top bg-fixed pt-16" style="background-image: url('/img/hero.png')">
+    <div id="hero" class="h-full bg-center bg-no-repeat bg-cover bg-fixed pt-16" style="background-image: url('/img/hero.png')">
         <h1 class="text-center py-2 text-5xl md:text-6xl text-white font-brand">August 1st, 2020</h1>
         <h1 class="text-center py-0 text-4xl md:text-5xl text-white font-brand">at the</h1>
         <h1 class="text-center py-2 text-5xl md:text-6xl text-white font-brand">Burnt Hills High School</h1>
@@ -15,15 +15,17 @@
         </div>
     </div>
 
-    <div class="md:flex md:justify-center" id="what">
+    <div class="md:flex md:justify-center overflow-hidden" id="what">
 
-        <div class="md:ml-20 p-12 mt-16 mb-16">
-            <h2 class="font-brand text-chocolate text-6xl">What is this?!</h2>
-            <p class="font-body text-black text-5xl">In The Chocolate Milk Mile, all runners must drink 1 cup of chocolate milk upon completion of every lap, equaling a half gallon of chocolate milk in total!</p>
-            <p class="font-body text-gray-500 text-2xl">(simply put, it’s just a really great time)</p>
+        <div class="text-center md:text-left md:ml-20 p-12 smd:p-8 mt-16 mb-16">
+            <div>
+                <h2 class="font-brand text-chocolate text-6xl">What is this?!</h2>
+                <p class="font-body text-black text-3xl smd:text-5xl">In The Chocolate Milk Mile, all runners must drink 1 cup of chocolate milk upon completion of every lap, equaling a half gallon of chocolate milk in total!</p>
+                <p class="font-body text-gray-500 text-2xl">(simply put, it’s just a really great time)</p>
+            </div>
         </div>
 
-        <div class="">
+        <div class="smd:-mr-40">
             <img class="hidden md:block" src="/img/milk.png" alt="A glass of thick, creamy, delicious chocolate milk.">
         </div>
 
@@ -38,7 +40,7 @@
 
     <div class="md:flex md:justify-center" id="prizes">
 
-        <div class="md:ml-20 p-12 mt-16 mb-16">
+        <div class="hidden md:block md:ml-20 -mt-20 absolute p-12">
             <img class="-ml-48" src="/img/splash.png" alt="">
         </div>
 

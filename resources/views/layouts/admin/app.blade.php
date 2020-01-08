@@ -23,24 +23,7 @@
 <body class="bg-gray-200">
     <div id="app">
 
-        <div class="bg-white flex py-6 px-8 justify-between">
-            <div>
-                <span class="verygood-font">A Very Good Registration System, Inc.</span>
-            </div>
-
-            <a class="inline-block md:hidden">|||</a>
-            <div class="hidden md:block">
-                <a class="text-gray-500 hover:text-gray-700 mx-2">Hi there, {{ Auth::user()->name }}</a>
-            </div>
-        </div>
-
-        <div class="bg-gray-800 px-8 text-white shadow-lg">
-            <a href="/manager" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">Home</a>
-            <a href="/manager/events/create" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">New Event</a>
-            <a href="/manager/registrants" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">View Registrants</a>
-            <a href="/manager/check-in" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">Check In</a>
-            <a href="/manager/support" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">Support</a>
-        </div>
+        <manager-nav name="{{ \Illuminate\Support\Facades\Auth::user()->name }}"></manager-nav>
 
         <div class="mx-20 my-12">
             @yield('content')

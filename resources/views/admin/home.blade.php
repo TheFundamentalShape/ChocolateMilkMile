@@ -6,18 +6,18 @@
         <p>Here's a brief breakdown of your events.</p>
     </div>
 
-    <div class="flex justify-between">
-        <div class="w-full mr-4 rounded p-4 bg-white shadow">
+    <div class="md:flex md:justify-between">
+        <div class="w-full my-2 md:my-0 md:mr-4 rounded p-4 bg-white shadow">
             <h3 class="">Total Events</h3>
             <p class="verygood-font my-2 text-3xl">{{ $events->count() }}</p>
         </div>
 
-        <div class="w-full mx-4 rounded p-4 bg-white shadow">
+        <div class="w-full my-2 md:my-0 md:mx-4 rounded p-4 bg-white shadow">
             <h3 class="">Total Registrants</h3>
             <p class="verygood-font my-2 text-3xl">167</p>
         </div>
 
-        <div class="w-full ml-4 rounded p-4 bg-white shadow">
+        <div class="w-full my-2 md:my-0 md:ml-4 rounded p-4 bg-white shadow">
             <h3 class="">Total Revenue</h3>
             <p class="verygood-font my-2 text-3xl">$300.50</p>
         </div>

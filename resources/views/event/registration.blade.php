@@ -39,7 +39,7 @@
 
     <div class="mx-20 my-12 flex justify-center">
         <div class="max-w-2xl">
-            <h1 class="text-5xl verygood-font">Awesome sauce. Here is the event that you're registering for.</h1>
+            <h1 class="text-4xl md:text-5xl verygood-font">Awesome sauce. Here is the event that you're registering for.</h1>
 
             <div class="mt-10 bg-white rounded shadow p-8">
                 <h1 class="verygood-font text-4xl">{{ $event->title }}</h1>

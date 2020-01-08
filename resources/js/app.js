@@ -32,6 +32,9 @@ import RegistrantsList from './components/RegistrantsList';
 import EventList from './components/EventList';
 import UserRegistrations from './components/UserRegistrations';
 import VueQrcode from '@chenfengyuan/vue-qrcode';
+import ManagerNav from './components/ManagerNav';
+import RegistrantNav from './components/RegistrantNav';
+import NavigationLink from './components/NavigationLink';
 
 import axios from 'axios';
 
@@ -54,6 +57,9 @@ const app = new Vue({
         'RegistrantsList': RegistrantsList,
         'EventList': EventList,
         'UserRegistrations': UserRegistrations,
+        'ManagerNav': ManagerNav,
+        'NavigationLink': NavigationLink,
+        'RegistrantNav': RegistrantNav,
         QrcodeStream,
     },
     methods: {

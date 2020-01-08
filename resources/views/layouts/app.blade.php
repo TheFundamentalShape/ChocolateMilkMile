@@ -25,17 +25,7 @@
 <body class="bg-gray-200">
     <div id="app">
 
-        <div class="bg-white shadow flex py-6 px-8 justify-between">
-            <div>
-                <a href="/home"><span class="verygood-font">A Very Good Registration System, Inc.</span></a>
-            </div>
-
-            <a class="inline-block md:hidden">|||</a>
-            <div class="hidden md:block">
-                <a href="/registrations" class="text-gray-500 hover:text-gray-700 mx-2">Your Registrations <span class='px-2 py-1 bg-blue-500 rounded-full text-white'>{{ Auth::user()->registrations()->confirmed()->count() }}</span></a>
-                <a class="text-gray-500 hover:text-gray-700 mx-2">Hi there, {{ Auth::user()->name }}</a>
-            </div>
-        </div>
+        <registrant-nav></registrant-nav>
 
         <div class="mx-20 my-12 flex justify-center">
             <div class="max-w-2xl">
