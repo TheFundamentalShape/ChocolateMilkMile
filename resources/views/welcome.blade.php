@@ -33,7 +33,7 @@
 
     <div class="flex justify-center bg-chocolate p-20 text-center bg-no-repeat bg-cover" style="background-image: url('/img/ripple.png')">
         <div class="max-w-3xl">
-            <h1 class="font-body text-white lg:text-6xl md:text-5xl text-4xl">This race is being put on to celebrate the life of Noah Farrelly, who loved running.</h1>
+            <h1 class="font-brand text-white lg:text-6xl md:text-5xl text-4xl">This race is being put on to celebrate the life of Noah Farrelly, who loved running.</h1>
             <p class="font-body text-white lg:text-4xl md:text-3xl text-2xl">All of the money (that we don’t spend on chocolate milk) will be donated to his family.</p>
         </div>
     </div>
