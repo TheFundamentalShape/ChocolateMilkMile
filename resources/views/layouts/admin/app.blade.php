@@ -35,10 +35,11 @@
         </div>
 
         <div class="bg-gray-800 px-8 text-white shadow-lg">
-            <a href="/manager" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">Admin Home</a>
-            <a href="/manager/events/create" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">Create a New Event</a>
+            <a href="/manager" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">Home</a>
+            <a href="/manager/events/create" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">New Event</a>
             <a href="/manager/registrants" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">View Registrants</a>
-            <a href="/manager/check-in" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">Registrant Check In</a>
+            <a href="/manager/check-in" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">Check In</a>
+            <a href="/manager/support" class="inline-block hover:bg-gray-600 hover:shadow py-5 px-4">Support</a>
         </div>
 
         <div class="mx-20 my-12">

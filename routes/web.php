@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', 'ContactSubmissionController@create');
+
+Route::post('/contact', 'ContactSubmissionController@post');
 
 Route::get('/about', function () {
     return view('about');
@@ -46,8 +46,13 @@ Broadcast::routes();
 // Admin End
 Route::middleware(['manager'])->group(function (){
     Route::get('/manager', 'ManagementPageController@index');
+
+    Route::get('/manager/support', 'ContactSubmissionController@index');
+    Route::post('/manager/support/{contactSubmission}/delete', 'ContactSubmissionController@delete');
+
     Route::get('/manager/events/create', 'EventController@create');
     Route::post('/manager/events/create', 'EventController@post');
+
     Route::get('/manager/check-in', 'ManagementPageController@checkin');
     Route::get('/manager/registrants', 'RegistrantController@index');
 

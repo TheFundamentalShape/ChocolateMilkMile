@@ -36,6 +36,13 @@
                     </div>
                 @endif
 
+                @if (Session::has('success'))
+                    <div class="bg-green-500 text-white rounded shadow-2xl p-4 mt-4">
+                        <h1 class="font-brand text-3xl md:text-4xl">Awesome sauce!</h1>
+                        <p class="font-body text-xl">{{ Session::get('success') }}</p>
+                    </div>
+                @endif
+
                 <div class="my-8">
                     <div>
                         <label class="font-body text-3xl pr-12" for="">What is your name?</label>
@@ -54,7 +61,7 @@
                     <div>
                         <label class="font-body text-3xl pr-12" for="">What are ya inquiring about?</label>
                     </div>
-                    <textarea class="border rounded p-2 w-full" type="password" name="password"></textarea>
+                    <textarea name="message" class="border rounded p-2 w-full"></textarea>
                 </div>
 
                 <div class="my-8 flex justify-between">
