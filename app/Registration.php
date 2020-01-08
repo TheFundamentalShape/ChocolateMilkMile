@@ -57,6 +57,7 @@ class Registration extends Model
     {
         return [
             'confirmation_number' => $this->confirmation_number,
+            'created_at' => $this->created_at->isoFormat('MMMM Do YYYY, h:mm:ss a'),
             'price' => $this->price,
             'checked_in_at' => $this->checked_in_at,
             'registrant' => [

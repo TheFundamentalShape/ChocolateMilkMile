@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-for="event in events">
-            <div @click="eventSelected(event)" class="border mt-2 rounded p-4 hover:bg-gray-200">
+            <div v-on:click="eventSelected(event)" class="border mt-2 rounded p-4 hover:bg-gray-200">
                 <p>{{ event.title }}</p>
             </div>
         </div>
@@ -13,7 +13,8 @@
         name: "EventList",
         data(){
             return {
-                events: null
+                events: null,
+                selectedEventId: null,
             }
         },
 
@@ -31,7 +32,7 @@
             },
 
             eventSelected(event) {
-                this.$emit('event-selected', event)
+                this.$root.$emit('event-selected', event);
             }
         }
     }

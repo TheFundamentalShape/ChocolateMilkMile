@@ -33,6 +33,7 @@ class Event extends Model
     public function toArray()
     {
         return [
+            'id' => $this->id,
             'title' => $this->title,
             'fee' => $this->fee,
             'location' => $this->location,

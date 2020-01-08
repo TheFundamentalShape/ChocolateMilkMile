@@ -79,3 +79,10 @@ Route::middleware(['manager'])->group(function (){
     });
 
 });
+
+// Admin End Api
+Route::middleware(['manager'])->group(function (){
+    Route::get('/manager/api/event/{event}/registrants', function(App\Event $event){
+        return $event->registrations;
+    });
+});
