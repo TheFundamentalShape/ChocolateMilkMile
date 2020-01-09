@@ -21,7 +21,7 @@
         </div>
 
         <div class="flex justify-center">
-            <form class="max-w-sm md:max-w-4xl" action="/contact" method="post">
+            <form class="max-w-sm md:w-full" action="/contact" method="post">
 
                 @csrf
 
@@ -47,28 +47,28 @@
                     <div>
                         <label class="font-body text-3xl pr-12" for="">What is your name?</label>
                     </div>
-                    <input class="border rounded p-2 w-full" type="text" name="name">
+                    <input placeholder="Seymore Butz" class="border rounded p-2 w-full" type="text" name="name">
                 </div>
 
                 <div class="my-8">
                     <div>
                         <label class="font-body text-3xl pr-12" for="">What is your email?</label>
                     </div>
-                    <input class="border rounded p-2 w-full" type="email" name="email">
+                    <input class="border rounded p-2 w-full" placeholder="seymorebutz@yahoo.com" type="email" name="email">
                 </div>
 
                 <div class="my-8">
                     <div>
                         <label class="font-body text-3xl pr-12" for="">What are ya inquiring about?</label>
                     </div>
-                    <textarea name="message" class="border rounded p-2 w-full"></textarea>
+                    <textarea rows="4" placeholder="Does chocolate milk come from brown cows?" name="message" class="border rounded p-2 w-full"></textarea>
                 </div>
 
                 <div class="my-8 flex justify-between">
                     <div class="pr-4">
                         <button type="submit" class="inline-block rounded px-12 py-3 font-body text-2xl text-white bg-chocolate hover:bg-dark-chocolate hover:text-active-yellow">Submit!</button>
                     </div>
-                    <p class="font-body md:max-w-md text-gray-500 md:text-2xl">By clicking Next, you will be brought to the a good event registration system to complete the registration process for this event.</p>
+                    <p class="font-body md:max-w-md text-gray-500 md:text-2xl w-full"></p>
                 </div>
 
             </form>
