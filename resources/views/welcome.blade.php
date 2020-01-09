@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="md:flex md:justify-center overflow-hidden" id="what">
+    <div class="md:flex md:justify-center max-w-6xl mx-auto" id="what">
 
         <div class="text-center md:text-left md:ml-20 p-12 smd:p-8 mt-16 mb-16">
             <div>
@@ -52,7 +52,7 @@
     </div>
 
     <div id="footer" class="bg-chocolate flex text-center justify-center p-12 bg-cover bg-no-repeat" style="background-image: url('/img/ripple.png')">
-        <div>
+        <div class="my-12">
             <h1 class="text-white font-brand text-5xl">What're ya waiting for?!</h1>
             <a href="/register" class="inline-block bg-active-yellow my-4 px-6 py-3 text-4xl text-chocolate font-brand hover:bg-white hover:text-chocolate rounded-lg shadow-2xl">Register today!</a>
         </div>

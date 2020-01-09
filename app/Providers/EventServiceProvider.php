@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Events\RegistrantCheckedIn;
+use App\Listeners\RegistrantCheckedInListener;
 
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -19,7 +20,10 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
-            RegistrantCheckedIn::class
+        ],
+
+        RegistrantCheckedIn::class => [
+            RegistrantCheckedInListener::class
         ],
     ];
 
