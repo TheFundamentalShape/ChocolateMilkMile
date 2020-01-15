@@ -1,11 +1,17 @@
 module.exports = {
     theme: {
+        inset: {
+            '0': 0,
+            auto: 'auto',
+            '1/2': '50%',
+            '1/4': '25%',
+            '3/4': '75%',
+            '1': '100%'
+        },
 
         screens: {
             'sm': '640px',
             // => @media (min-width: 640px) { ... }
-
-            'smd': '720px',
 
             'md': '768px',
             // => @media (min-width: 768px) { ... }
@@ -19,9 +25,8 @@ module.exports = {
 
         extend: {
             colors: {
-                'chocolate': '#5F3E22',
-                'active-yellow': '#F8E71C',
-                'dark-chocolate': '#43281c'
+                brown: '#56301C',
+                'dark-brown': '#352116'
             },
         }
 

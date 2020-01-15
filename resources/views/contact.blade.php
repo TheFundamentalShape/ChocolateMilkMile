@@ -1,36 +1,30 @@
-@extends('layouts.landing')
+@extends('layouts.page')
 
 @section('title')
     Contact Us!
 @endsection
 
 @section('content')
-    <div id="head" class="relative mt-16">
 
-        <div class="p-4 md:flex">
-            <div class="text-center md:max-w-lg lg:mx-auto">
-                <h1 class="text-chocolate font-brand text-5xl md:text-6xl">Have a question?</h1>
-                <p class="text-black text-3xl md:text-4xl lg:text-5xl font-body">Feel Free to reachout! We’ll get back to you as soon as we possibly can.</p>
-                <p class="text-gray-600 text-2xl md:text-3xl font-body">(You can use the form below to reach us!)</p>
-            </div>
-            <div class="hidden md:block md:absolute md:right-0 md:overflow-hidden">
-                <div class="-mr-40">
-                    <img src="/img/cow.png" alt="">
-                </div>
-            </div>
+    <div id="head">
+        <div class="text-center mt-16 md:mt-32 lg:mx-auto p-4 max-w-2xl">
+            <h1 class="text-brown fat-font text-5xl md:text-6xl">Have a question?</h1>
+            <p class="text-brown text-3xl md:text-4xl lg:text-5xl skippy-font">Feel Free to reachout! We’ll get back to you as soon as we possibly can.</p>
+            <p class="text-gray-600 skippy-font text-2xl md:text-3xl font-body">(You can use the form below to reach us!)</p>
         </div>
+    </div>
 
-        <div class="flex justify-center">
-            <form class="max-w-sm md:w-full" action="/contact" method="post">
+        <div class="flex justify-center ">
+            <form class="w-3/4" action="/contact" method="post">
 
                 @csrf
 
                 @if ($errors->any())
-                    <div class="bg-active-yellow rounded shadow-2xl p-4 mt-4">
-                        <h1 class="font-brand text-2xl">Hmm... Something went wrong.</h1>
+                    <div class="bg-yellow-500 rounded shadow-2xl p-4 mt-4">
+                        <h1 class="fat-font text-2xl">Hmm... Something went wrong.</h1>
                         <ul class="list-disc pl-5">
                             @foreach ($errors->all() as $error)
-                                <li class="font-body font-xl">{{ $error }}</li>
+                                <li class="skippy-font font-xl">{{ $error }}</li>
                             @endforeach
                         </ul>
                     </div>
@@ -45,30 +39,29 @@
 
                 <div class="my-8">
                     <div>
-                        <label class="font-body text-3xl pr-12" for="">What is your name?</label>
+                        <label class="skippy-font text-3xl pr-12" for="">What is your name?</label>
                     </div>
-                    <input placeholder="Seymore Butz" class="border rounded p-2 w-full" type="text" name="name">
+                    <input placeholder="Jimbo" class="fat-font text-brown border rounded p-2 w-full" type="text" name="name">
                 </div>
 
                 <div class="my-8">
                     <div>
-                        <label class="font-body text-3xl pr-12" for="">What is your email?</label>
+                        <label class="skippy-font text-3xl pr-12" for="">What is your email?</label>
                     </div>
-                    <input class="border rounded p-2 w-full" placeholder="seymorebutz@yahoo.com" type="email" name="email">
+                    <input class="fat-font text-brown border rounded p-2 w-full" placeholder="jimbo@yahoo.com" type="email" name="email">
                 </div>
 
                 <div class="my-8">
                     <div>
-                        <label class="font-body text-3xl pr-12" for="">What are ya inquiring about?</label>
+                        <label class="skippy-font text-3xl pr-12" for="">What are ya inquiring about?</label>
                     </div>
-                    <textarea rows="4" placeholder="Does chocolate milk come from brown cows?" name="message" class="border rounded p-2 w-full"></textarea>
+                    <textarea rows="4" placeholder="Does chocolate milk come from brown cows?" name="message" class="fat-font text-brown border rounded p-2 w-full"></textarea>
                 </div>
 
                 <div class="my-8 flex justify-between">
                     <div class="pr-4">
-                        <button type="submit" class="inline-block rounded px-12 py-3 font-body text-2xl text-white bg-chocolate hover:bg-dark-chocolate hover:text-active-yellow">Submit!</button>
+                        <button type="submit" class="inline-block rounded px-12 py-3 fat-font text-2xl text-white bg-brown w-full hover:bg-dark-brown">Submit!</button>
                     </div>
-                    <p class="font-body md:max-w-md text-gray-500 md:text-2xl w-full"></p>
                 </div>
 
             </form>
