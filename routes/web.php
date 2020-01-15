@@ -15,19 +15,19 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("landing.home");
 
-Route::get('/contact', 'ContactSubmissionController@create');
+Route::get('/contact', 'ContactSubmissionController@create')->name("landing.contact");
 
-Route::post('/contact', 'ContactSubmissionController@post');
+Route::post('/contact', 'ContactSubmissionController@post')->name("landing.contact.post");
 
 Route::get('/about', function () {
     return view('about');
-});
+})->name("landing.about");
 
 Route::get('/photos', function () {
     return view('photos');
-});
+})->name("landing.photos");
 
 // User End
 Route::get('/home', 'HomeController@index')->name('home');

@@ -1,7 +1,5 @@
 @tailwind base;
-
 @tailwind components;
-
 
 @font-face {
   font-family: 'past_dueregular';
@@ -11,16 +9,6 @@
   font-style: normal;
 
 }
-
-@font-face {
-  font-family: 'underland_sansregular';
-  src: url('/fonts/underland_sans.woff2') format('woff2'),
-  url('/fonts/underland_sans.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
-}
-
 @font-face {
   font-family: 'indigo_regularregular';
   src: url('/fonts/indigo_regular.woff2') format('woff2'),
@@ -30,18 +18,20 @@
 
 }
 
-
-.nav-link {
-  @apply px-4 my-4 text-white;
-  font-family: 'underland_sansregular';
+.fat-font {
+  font-family: fatfrank, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.font-brand {
-  font-family: Farmhand;
+.skippy-font {
+  font-family: skippy-sharp, sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
-.font-body {
-  font-family: 'underland_sansregular';
+.tilty {
+  transform: rotate(-20deg);
 }
 
 .verygood-font {
