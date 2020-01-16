@@ -50,7 +50,7 @@
         methods: {
             getRegistrations() {
                 axios
-                    .get('/api/registrations?api_token=' + this.api_token)
+                    .get('/user/api/registrations')
                     .then(response => {
                         this.registrations = response.data;
                     });

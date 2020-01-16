@@ -36,6 +36,10 @@ Route::get('/events/{event}/register', 'EventRegistrationController@get')->name(
 Route::post('/events/{event}/register', 'EventRegistrationController@post')->name('registration.post');
 Route::get('/events/{event}/registrations/{registration}/confirmation', 'RegistrationConfirmationController@get')->name('registration.confirmation');
 
+Route::get('/user/api/registrations', function(){
+    return Auth::user()->registrations;
+});
+
 Route::get('/getreg/{registration}', function(\App\Registration $registration){
     return (new App\Mail\RegistrationConfirmed($registration))->render();
 });
