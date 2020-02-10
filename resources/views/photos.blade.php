@@ -15,80 +15,70 @@
 
         <div class = "md:flex md:flex-wrap px-5">
             <div class = "mb-4 px-2 w-full md:w-1/3">
-                <img class = "block h-auto w-full" src='/img/mikhail.jpg'>
+                <img class = "block h-auto w-full" src='/pics/clai.png'>
             </div>
             <div class = "mb-4 px-2 w-full md:w-1/3">
-                <img class = "block h-auto w-full" src='/img/colinbrother.jpg'>
+                <img class = "block h-auto w-full" src='/pics/don.png'>
             </div>
             <div class = "mb-4 px-2 w-full md:w-1/3">
-                <img class = "block h-auto w-full" src='/img/joequinn.jpg'>
+                <img class = "block h-auto w-full" src='/pics/emily.png'>
             </div>
         </div>
-        <div class = "flex flex-wrap px-5 ">
-            <div class = "mb-4 px-2 w-full md:w-1/3 ">
-                <img class = "block h-auto w-full" src='/img/dante1.jpg'>
+        <div class = "md:flex md:flex-wrap px-5">
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/girls.png'>
             </div>
             <div class = "mb-4 px-2 w-full md:w-1/3">
-                <img class = "block h-auto w-full" src='/img/sean.jpg'>
+                <img class = "block h-auto w-full" src='/pics/markezra.png'>
             </div>
             <div class = "mb-4 px-2 w-full md:w-1/3">
-                <img class = "block h-auto w-full" src='/img/dante2.jpg'>
+                <img class = "block h-auto w-full" src='/pics/liam.png'>
             </div>
         </div>
-        <div class = "flex flex-wrap px-5 -mx-2">
-            <div class = "mb-4 px-2 sm:w-1/2  ">
-                <img class = "block h-auto w-full" src='/img2/cana.jpg'>
+        <div class = "md:flex md:flex-wrap px-5">
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/girlwon.png'>
             </div>
-            <div class = "mb-4 px-2 sm:w-1/2 ">
-                <img class = "block h-auto w-full" src='/img2/clai.jpg'>
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/markwinning.png'>
             </div>
-            <div class = "mb-4 px-2 sm:w-1/2 ">
-                <img class = "block h-auto w-full" src='/img2/don.jpg'>
-            </div>
-        </div>
-        <div class = "flex flex-wrap px-5 -mx-2">
-            <div class = "mb-4 px-2 sm:w-1/2 md:w-1/3 ">
-                <img class = "block h-auto w-full" src='/img2/emily.jpg'>
-            </div>
-            <div class = "mb-4 px-2 sm:w-1/2 md:w-1/3">
-                <img class = "block h-auto w-full" src='/img2/girls.jpg'>
-            </div>
-            <div class = "mb-4 px-2 sm:w-1/2 md:w-1/3">
-                <img class = "block h-auto w-full" src='/img2/girlwon.jpg'>
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/mary.png'>
             </div>
         </div>
-        <div class = "flex flex-wrap px-5 -mx-2">
-            <div class = "mb-4 px-2 sm:w-1/2 md:w-1/3 ">
-                <img class = "block h-auto w-full" src='/img2/mary.jpg'>
+        <div class = "md:flex md:flex-wrap px-5">
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/me.png'>
             </div>
-            <div class = "mb-4 px-2 sm:w-1/2 md:w-1/3">
-                <img class = "block h-auto w-full" src='/img2/me.jpg'>
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/niskygirl.png'>
             </div>
-            <div class = "mb-4 px-2 sm:w-1/2 md:w-1/3">
-                <img class = "block h-auto w-full" src='/img2/niskygirl.jpg'>
-            </div>
-        </div>
-        <div class = "flex flex-wrap px-5 -mx-2">
-            <div class = "mb-4 px-2 sm:w-1/2 md:w-1/3 ">
-                <img class = "block h-auto w-full" src='/img2/won.jpg'>
-            </div>
-            <div class = "mb-4 px-2 sm:w-1/2 md:w-1/3">
-                <img class = "block h-auto w-full" src='/img2/race.jpg'>
-            </div>
-            <div class = "mb-4 px-2 sm:w-1/2 md:w-1/3">
-                <img class = "block h-auto w-full" src='/img2/sam.jpg'>
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/won.png'>
             </div>
         </div>
-        <div class = "flex flex-wrap px-5 -mx-2">
-            <div class = "mb-4 px-2 sm:w-1/2 md:w-1/3 ">
-                <img class = "block h-auto w-full" src='/img2/tylerevancute.jpg'>
+        <div class = "md:flex md:flex-wrap px-5">
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/race.png'>
             </div>
-            <div class = "mb-4 px-2 sm:w-1/2 md:w-1/3">
-                <img class = "block h-auto w-full" src='/img2/win.jpg'>
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/sam.png'>
             </div>
-            <div class = "mb-4 px-2 sm:w-1/2 md:w-1/3">
-                <img class = "block h-auto w-full" src='/img2/park.jpg'>
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/tylerevancute.png'>
             </div>
         </div>
+        <div class = "md:flex md:flex-wrap px-5">
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/win.png'>
+            </div>
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/park.png'>
+            </div>
+            <div class = "mb-4 px-2 w-full md:w-1/3">
+                <img class = "block h-auto w-full" src='/pics/mary.png'>
+            </div>
+        </div>
+
     </div>
 @endsection
