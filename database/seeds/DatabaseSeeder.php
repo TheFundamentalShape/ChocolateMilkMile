@@ -13,9 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        /*
         factory(User::class)->state('admin')->create([
             'email' => 'him@theluigi.com',
         ]);
+        */
 
         \App\Event::create([
             'title' => 'Chocolate Milk Mile',

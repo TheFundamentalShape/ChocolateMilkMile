@@ -40,9 +40,11 @@ Route::get('/user/api/registrations', function(){
     return Auth::user()->registrations;
 });
 
+/*
 Route::get('/getreg/{registration}', function(\App\Registration $registration){
     return (new App\Mail\RegistrationConfirmed($registration))->render();
 });
+*/
 
 Auth::routes();
 Broadcast::routes();
