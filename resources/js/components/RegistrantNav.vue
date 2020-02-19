@@ -22,7 +22,7 @@
     export default {
         components: {NavigationLink},
         props: ['name'],
-        name: "ManagerNav",
+        name: "RegistrantNav",
         methods: {
             toggleNav() {
                 this.navOpen = !this.navOpen;

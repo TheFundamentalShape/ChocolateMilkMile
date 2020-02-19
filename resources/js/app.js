@@ -35,6 +35,7 @@ import VueQrcode from '@chenfengyuan/vue-qrcode';
 import ManagerNav from './components/ManagerNav';
 import RegistrantNav from './components/RegistrantNav';
 import NavigationLink from './components/NavigationLink';
+import StripeElement from './components/StripeElement'
 
 import axios from 'axios';
 
@@ -60,6 +61,7 @@ const app = new Vue({
         'ManagerNav': ManagerNav,
         'NavigationLink': NavigationLink,
         'RegistrantNav': RegistrantNav,
+        'StripeElement': StripeElement,
         QrcodeStream,
     },
     methods: {
@@ -90,5 +92,3 @@ const app = new Vue({
 
     }
 });
-
-app.api_key = document.getElementById();
