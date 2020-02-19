@@ -41,21 +41,21 @@
                     <div>
                         <label class="skippy-font text-3xl pr-12" for="">What is your name?</label>
                     </div>
-                    <input placeholder="Jimbo" class="fat-font text-brown border rounded p-2 w-full" type="text" name="name">
+                    <input placeholder="" class="fat-font text-black border rounded p-2 w-full" type="text" name="name">
                 </div>
 
                 <div class="my-8">
                     <div>
                         <label class="skippy-font text-3xl pr-12" for="">What is your email?</label>
                     </div>
-                    <input class="fat-font text-brown border rounded p-2 w-full" placeholder="jimbo@yahoo.com" type="email" name="email">
+                    <input class="fat-font text-black border rounded p-2 w-full" placeholder="" type="email" name="email">
                 </div>
 
                 <div class="my-8">
                     <div>
                         <label class="skippy-font text-3xl pr-12" for="">What are ya inquiring about?</label>
                     </div>
-                    <textarea rows="4" placeholder="Does chocolate milk come from brown cows?" name="message" class="fat-font text-brown border rounded p-2 w-full"></textarea>
+                    <textarea rows="4" placeholder="Does chocolate milk come from brown cows?" name="message" class="fat-font text-black-50 border rounded p-2 w-full"></textarea>
                 </div>
 
                 <div class="my-8 flex justify-between">
