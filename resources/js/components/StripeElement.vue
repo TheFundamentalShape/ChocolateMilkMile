@@ -7,7 +7,7 @@
             </label>
 
             <div class="bg-white rounded p-4 mt-2 shadow">
-                <div ref="card" id="card-element" style="">
+                <div ref="card">
                     <!-- A Stripe Element will be inserted here. -->
                 </div>
             </div>
@@ -17,35 +17,28 @@
 
         </div>
         <div>
-            <button @click="broadcastToken" class="bg-blue-500 hover:bg-blue-700 w-1/3 rounded px-4 py-2 text-white mt-4 shadow">Register</button>
+            <button @click="purchase" class="bg-blue-500 hover:bg-blue-700 w-1/3 rounded px-4 py-2 text-white mt-4 shadow">Register</button>
         </div>
     </div>
 </template>
 
 <script>
-    var style = {
-        base: {
-            // Add your base input styles here. For example:
-            fontSize: '16px',
-            color: "#32325d",
-        }
-    };
 
-    let stripe = Stripe(process.env.STRIPE_KEY),
+    let stripe = Stripe("pk_test_npgHJYXNKJ7Z0bm9RkGGUQa600nY0T59kW"),
         elements = stripe.elements(),
         card = undefined;
 
     export default {
         name: "StripeElement",
         methods: {
-            broadcastToken(){
-                stripe.createToken(card).then(function (result){
-                    this.$root.$emit("token", result);
+            purchase: function () {
+                stripe.createToken(card).then(function(result) {
+                    console.log(result);
                 });
             }
         },
         mounted() {
-            card = elements.create('card', {style: style});
+            card = elements.create('card');
             card.mount(this.$refs.card);
         }
     }

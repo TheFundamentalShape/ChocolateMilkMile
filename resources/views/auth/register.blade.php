@@ -8,13 +8,13 @@
     <div class="relative">
 
         <div class="flex justify-center">
-            <div class="text-center mt-16 md:mt-32">
-                <h1 class="text-brown fat-font text-5xl md:text-6xl">YooHoo! Let's get you registered!</h1>
+            <div class="text-center max-w-md mt-32">
+                <h1 class="text-brown fat-font text-5xl">YooHoo! Let's get you registered!</h1>
             </div>
         </div>
 
-        <div class="flex justify-center">
-            <form class="max-w-sm md:max-w-4xl" action="/register" method="post">
+        <div class="flex w-full justify-center">
+            <form class="px-12" action="/register" method="post">
 
                 @csrf
 
@@ -58,8 +58,12 @@
                 </div>
 
                 <div class="my-8 flex justify-between">
-                    <div class="pr-4">
+                    <div class="my-auto">
                         <button type="submit" class="inline-block rounded px-12 py-3 font-body text-2xl text-white bg-brown hover:bg-dark-brown fat-font">Next!</button>
+                    </div>
+
+                    <div class="pl-8 my-auto">
+                        <p class="skippy-font text-brown text-2xl">Wait a sec.. have you already registered? You can login <a href="/login" class="underline">here!</a></p>
                     </div>
                 </div>
 

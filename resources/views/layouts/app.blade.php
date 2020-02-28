@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-
+    <script src="https://js.stripe.com/v3/"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -34,8 +34,8 @@
 
     </div>
 
-</body>
+    <script type="application/javascript" src="/js/app.js"></script>
 
-<script src="/js/app.js"></script>
+</body>
 
 </html>

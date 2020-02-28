@@ -11,10 +11,12 @@ class Registration extends Model
 {
     protected $guarded = [];
 
+    // returns the User
     public function user(){
         return $this->belongsTo(User::class);
     }
 
+    // returns the Event
     public function event(){
         return $this->belongsTo(Event::class);
     }
