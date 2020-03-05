@@ -10,16 +10,25 @@ use Stripe\Stripe;
 
 class StripePaymentGateway implements PaymentGateway
 {
+    private $totalCharges;
+
     public function __construct(){
         Stripe::setApiKey(env('STRIPE_SECRET'));
+        $this->totalCharges = collect();
     }
 
     public function charge(Registration $registration, $token)
     {
+        $this->totalCharges->add($registration->price);
+
+        if($registration->hasShirtOrder()){
+            $this->totalCharges->add(1500);
+        }
+
         try
         {
             \Stripe\Charge::create([
-                'amount' => $registration->price,
+                'amount' => $this->totalCharges->sum(),
                 'currency' => 'usd',
                 'description' => 'Event Registration Fee',
                 'source' => $token

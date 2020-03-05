@@ -40,11 +40,4 @@ class User extends Authenticatable
     public function registrations() {
         return $this->hasMany(Registration::class);
     }
-
-    public function toArray() {
-        return [
-            'name' => $this->name,
-            'email' => $this->email
-        ];
-    }
 }

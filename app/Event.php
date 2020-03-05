@@ -15,11 +15,15 @@ class Event extends Model
     }
 
     /**
-     * @param User $user
+     * @param array $registrant
      * @return Registration
      */
     public function register($registrant){
-        return $this->registrations()->create($registrant);
+        return $this->registrations()->create([
+            'user_id' => $registrant['user_id'],
+            'name' => $registrant['name'],
+            'email' => $registrant['email'],
+        ]);
     }
 
     public function getFormattedPriceAttribute() {
@@ -36,6 +40,7 @@ class Event extends Model
             'id' => $this->id,
             'title' => $this->title,
             'fee' => $this->fee,
+            'formatted_price' => $this->formatted_price,
             'location' => $this->location,
             'dates' => [
                 'human' => $this->formatted_date,

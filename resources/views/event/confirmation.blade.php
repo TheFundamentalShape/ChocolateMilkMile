@@ -19,6 +19,14 @@
         <p class="my-2">If you need to cancel your registration, request a refund, or if you have any questions, please reach out to us.</p>
     </div>
 
+    @if($registration->hasShirtOrder())
+        <div class="mt-10 bg-white p-8 rounded shadow">
+            <h1 class="verygood-font text-xl">You also have a shirt with your order!</h1>
+            <p class="my-2 text-gray-600">Your registration also includes a sweet Chocolate Milk Mile t-shirt! When you check in for the event, you will be given your shirt!</p>
+            <p class="my-2 text-gray-600">You've indicated that you want a <b>{{ $registration->shirtOrder()->first()->shirt_size }}</b> sized t-shirt!</p>
+        </div>
+    @endif
+
     <div class="mt-8">
         <a class="bg-blue-500 hover:bg-blue-700 w-1/3 rounded px-4 py-2 text-white mt-4 shadow" href="/registrations">Go to your registrations</a>
     </div>

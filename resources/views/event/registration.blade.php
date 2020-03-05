@@ -26,30 +26,25 @@
 <body class="bg-gray-200">
 <div id="app">
 
-    <div class="bg-white shadow flex py-6 px-8 justify-between">
-        <div>
-            <a href="/home"><span class="verygood-font">A Very Good Registration System, Inc.</span></a>
-        </div>
-
-        <a class="inline-block md:hidden">|||</a>
-        <div class="hidden md:block">
-            <a href="/registrations" class="text-gray-500 hover:text-gray-700 mx-2">Your Registrations <span class='px-2 py-1 bg-blue-500 rounded-full text-white'>{{ Auth::user()->registrations()->confirmed()->count() }}</span></a>
-            <a class="text-gray-500 hover:text-gray-700 mx-2">Hi there, {{ Auth::user()->name }}</a>
-        </div>
-    </div>
+    <registrant-nav></registrant-nav>
 
     <div class="mx-20 my-12 flex justify-center">
         <div class="max-w-2xl">
-            <h1 class="text-4xl md:text-5xl verygood-font">Awesome sauce. Here is the event that you're registering for.</h1>
+            <h1 class="text-3xl lg:text-5xl md:text-4xl verygood-font">Awesome sauce. Here's the event that you're registering for.</h1>
 
-            <div class="mt-10 bg-white rounded shadow p-8">
-                <h1 class="verygood-font text-4xl">{{ $event->title }}</h1>
-                <p class="text-gray-600 text-lg my-2"><i class="fas fa-calendar-day"></i> {{ $event->formatted_date }}</p>
-                <p class="text-gray-600 text-lg my-2"><i class="fas fa-map-marked-alt"></i> {{ $event->location }}</p>
-                <p class="text-gray-600 text-lg my-2"><i class="fas fa-money-bill-wave"></i> ${{ $event->formatted_price }}</p>
-            </div>
+            @if($errors->any())
+                <div class="mt-4 bg-red-500 rounded p-4 shadow text-white">
+                    <h3 class="text-xl verygood-font">Something went wrong...</h3>
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-            <registration-form :event="{{ $event->toJson() }}"></registration-form>
+            <registration-form csrf="{{ csrf_token() }}" :event="{{ $event->toJson() }}"></registration-form>
+
         </div>
     </div>
 

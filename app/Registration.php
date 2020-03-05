@@ -21,8 +21,21 @@ class Registration extends Model
         return $this->belongsTo(Event::class);
     }
 
+    // returns the ShirtOrders
+    public function shirtOrder(){
+        return $this->hasOne(ShirtOrder::class);
+    }
+
     public function cancel() {
         $this->delete();
+    }
+
+    public function orderShirt($size){
+        $this->update(['hasShirt' => true]);
+
+        return $this->shirtOrder()->create([
+            'size' => $size
+        ]);
     }
 
     public function confirm() {
@@ -51,12 +64,31 @@ class Registration extends Model
         return $query->where('confirmed_at', '!=', null);
     }
 
+    public function hasShirtOrder(){
+         return !is_null($this->shirtOrder);
+    }
+
     public function getPriceAttribute() {
         return $this->event()->first()->fee;
     }
 
     public function toArray()
     {
+        if($this->hasShirtOrder()){
+            return [
+                'confirmation_number' => $this->confirmation_number,
+                'created_at' => $this->created_at->isoFormat('MMMM Do YYYY, h:mm:ss a'),
+                'price' => $this->price,
+                'checked_in_at' => $this->checked_in_at,
+                'registrant' => [
+                    'name' => $this->name,
+                    'email' => $this->email
+                ],
+                'shirt_order' => $this->shirtOrder,
+                'event' => $this->event
+            ];
+        }
+
         return [
             'confirmation_number' => $this->confirmation_number,
             'created_at' => $this->created_at->isoFormat('MMMM Do YYYY, h:mm:ss a'),

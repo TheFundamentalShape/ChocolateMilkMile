@@ -10,7 +10,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script defer src="{{ asset('/js/app.js') }}"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,7 +24,7 @@
 <body class="bg-gray-200">
     <div id="app">
 
-        <manager-nav name="{{ \Illuminate\Support\Facades\Auth::user()->name }}"></manager-nav>
+        <manager-nav></manager-nav>
 
         <div class="mx-20 my-12">
             @yield('content')
@@ -31,4 +32,6 @@
 
     </div>
 </body>
+<script type="application/javascript" src="/js/app.js"></script>
 </html>
+
