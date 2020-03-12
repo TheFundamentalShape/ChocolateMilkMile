@@ -12,6 +12,10 @@
     <!-- Scripts -->
     <script src="https://js.stripe.com/v3/"></script>
 
+    <script>
+        let stripe = Stripe("{{ env('STRIPE_KEY') }}");
+    </script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
