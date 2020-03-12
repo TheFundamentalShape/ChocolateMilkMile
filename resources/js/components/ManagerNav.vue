@@ -24,7 +24,6 @@
     import NavigationLink from "./NavigationLink";
     export default {
         components: {NavigationLink},
-        props: ['name'],
         name: "ManagerNav",
         methods: {
             toggleNav() {
@@ -38,7 +37,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>

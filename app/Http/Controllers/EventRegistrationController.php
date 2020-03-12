@@ -30,18 +30,25 @@ class EventRegistrationController extends Controller
         return view('event.registration', ['event' => $event]);
     }
 
-    public function post(Event $event) {
+    public function post(Event $event)
+    {
         $this->validate(request(), [
             'name' => 'required|string',
             'email' => 'required|email|unique:registrations',
-            'payment_token' => 'required'
+            'payment_token' => 'required|string',
+            'shirtSize' => 'required_if:hasShirt,true',
         ]);
 
         $registration = $event->register([
-            'name' => \request('name'),
-            'email' => \request('email'),
-            'user_id' => Auth::user()->id
+            'name' => request('name'),
+            'email' => request('email'),
+            'user_id' => Auth::user()->id,
         ]);
+
+        if(request()->has('hasShirt') && request()->has('shirtSize') && request('hasShirt') == "true")
+        {
+            $registration->orderShirt(request('shirtSize'));
+        }
 
         try
         {
@@ -58,6 +65,6 @@ class EventRegistrationController extends Controller
         //    'event' => $event
         //]);
 
-        return redirect()->route('registration.confirmation', [$event, $registration]);
+        return redirect(route('registration.confirmation', [$event, $registration]));
     }
 }

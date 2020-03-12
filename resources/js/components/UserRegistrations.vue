@@ -10,7 +10,7 @@
         <div v-for="registration in registrations" class="mt-10 bg-white rounded shadow hover:shadow-2xl p-8">
             <div class="md:flex md:justify-between">
                 <div>
-                    <h1 class="verygood-font text-4xl">{{ registration.event.title }}</h1>
+                    <h1 class="verygood-font text-2xl md:text-4xl">{{ registration.event.title }}</h1>
                     <p class="text-gray-600 text-lg my-2"><i class="fas fa-calendar-day"></i> {{ registration.event.dates.human }}</p>
                     <p class="text-gray-600 text-lg my-2"><i class="fas fa-map-marked-alt"></i> {{ registration.event.location }}</p>
                     <p class="text-gray-600 text-lg my-2"><i class="fas fa-money-bill-wave"></i> ${{ registration.price / 100 }}.00</p>
@@ -18,8 +18,13 @@
                     <hr>
 
                     <p class="text-gray-600 text-lg my-2">This registration is for <b>{{ registration.registrant.name }}</b> ({{ registration.confirmation_number }}).</p>
+
+                    <div class="mt-6 bg-green-100 rounded-lg border-2 border-green-500 p-4" v-if="registration.hasOwnProperty('shirt_order')">
+                        <p class="text-sm text-green-500">Great news, this registration also has a t-shirt with it!</p>
+                    </div>
+
                 </div>
-                <div class="flex justify-center">
+                <div class="md:ml-6 flex justify-center">
                     <div class="text-center">
 
                         <qrcode :value="registration.confirmation_number" :options="{ width: 250 }"></qrcode>

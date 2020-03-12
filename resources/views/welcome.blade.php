@@ -63,11 +63,12 @@
     <div class="flex justify-center">
         <div class="mt-4 mb-32 mt-32 lg:max-w-full max-w-md text-center">
             <a href="/register" class="hover:underline text-brown hover:text-dark-brown"><h1 class="fat-font text-6xl">Register Now!</h1></a>
-            <p class="skippy-font text-brown text-2xl">
+            <p class="skippy-font text-brown text-2xl px-6">
                 All of the proceeds from this event are going to the Noah Farrelly Memorial Fund. You can donate by participating in the event, or purchasing a T-shirt.
                 You can purchase a T-shirt for $15 dollars, you can register for $7, or you can do both for $20!
                 We'll also be accepting donations of shoes and running flats on the day of the event.
             </p>
         </div>
     </div>
+
 @endsection

@@ -48,4 +48,15 @@
                 We'll also be accepting donations of shoes and running flats at the time of the event.</p>
         </div>
     </div>
+
+    <div class="my-10 px-12" id="what">
+        <div>
+            <h2 class="fat-font text-brown text-4xl">Need to get in touch with us?</h2>
+            <p class="skippy-font text-brown text-2xl">
+                Need a refund for a registration? Have questions about the event itself? We thought you might,
+                so we have a handy dandy lil' contact form on <a href="/contact" class="underline">this page</a>. You can use that and we'll
+                get back to ya as soon as possible!
+            </p>
+        </div>
+    </div>
 @endsection

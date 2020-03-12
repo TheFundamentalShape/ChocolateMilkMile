@@ -1,11 +1,16 @@
 <template>
     <div class="bg-white rounded shadow my-4 md:my-0 md:ml-4 p-4 w-full" v-show="registration !== null">
         <h1 class="text-4xl verygood-font">{{ registration.registrant.name }}</h1>
-        <p><span class="bg-blue-500 rounded-full shadow text-white px-2 py-1">{{ registration.confirmation_number }}</span></p>
+        <p class="flex">
+            <span class="bg-blue-500 rounded-full shadow text-white px-2 py-1">{{ registration.confirmation_number }}</span>
+            <span v-if="registration.hasOwnProperty('shirt_order')" class="ml-2 bg-green-500 rounded-full shadow text-white px-2 py-1">Ordered a t-shirt!</span>
+        </p>
         <h3 class="mt-4 text-2xl">Event Details</h3>
         <div class="mt-2 p-4 border rounded">
-            <ul class="list-disc ml-8">
-                <li>{{ event.title }}</li>
+            <h1 class="verygood-font text-2xl">{{ event.title }}</h1>
+            <ul v-if="registration.hasOwnProperty('shirt_order')" class="list-disc ml-8">
+                <li>The registrant has purchased a t-shirt with their registration</li>
+                <li>Please give them a <b>{{ registration.shirt_order.size }}</b> t-shirt.</li>
             </ul>
         </div>
         <div class="mt-4">

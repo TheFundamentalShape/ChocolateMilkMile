@@ -26,8 +26,14 @@ class FakePaymentGateway implements PaymentGateway
     public function charge(Registration $registration, $token)
     {
         if($token == $this->getValidTestToken()) {
+
             // charge
-            $this->totalCharges[] = $registration->price;
+
+            $this->totalCharges->add($registration->price);
+
+            if($registration->hasShirtOrder()){
+                $this->totalCharges->add(1500);
+            }
 
             //update registration with a confirmation number
             return $registration->confirm();

@@ -1,4 +1,4 @@
-<?php
+j<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,11 +18,12 @@ class CreateRegistrationsTable extends Migration
             $table->unsignedInteger('event_id');
 
             // Who this registration belongs to
-            $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('user_id');
 
             // The actual registrant information
             $table->string('name');
             $table->string('email');
+            $table->boolean('hasShirt')->default(false);
 
             $table->timestamps();
             $table->timestamp('confirmed_at')->nullable();

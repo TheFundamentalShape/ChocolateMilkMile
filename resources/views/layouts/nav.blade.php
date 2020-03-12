@@ -8,7 +8,6 @@
         <div class="flex justify-center md:justify-between my-auto">
             <div class="my-auto hover:bg-dark-brown {{ Route::currentRouteNamed('landing.home') ? 'bg-dark-brown' : '' }} py-4"><a href="/" class="px-4 fat-font">Home</a></div>
             <div class="my-auto hover:bg-dark-brown {{ Route::currentRouteNamed('landing.about') ? 'bg-dark-brown' : '' }} py-4"><a href="/about" class="px-4 fat-font">About</a></div>
-            <div class="my-auto hover:bg-dark-brown {{ Route::currentRouteNamed('landing.contact') ? 'bg-dark-brown' : '' }} py-4"><a href="/contact" class="px-4 fat-font">Contact</a></div>
             <div class="my-auto hover:bg-dark-brown {{ Route::currentRouteNamed('landing.photos') ? 'bg-dark-brown' : '' }} py-4"><a href="/photos" class="px-4 fat-font">Photos</a></div>
             <div class="my-auto hover:bg-dark-brown {{ Route::currentRouteNamed('register') ? 'bg-dark-brown' : '' }} py-4"><a href="/register" class="px-4 fat-font">Register</a></div>
         </div>
