@@ -111,8 +111,7 @@
 
 <script>
 
-    let stripe = Stripe(process.env.MIX_STRIPE_KEY),
-        elements = stripe.elements(),
+    let elements = stripe.elements(),
         card = undefined;
 
     export default {

@@ -1,6 +1,8 @@
 const mix = require('laravel-mix');
 const tailwind = require('tailwindcss');
 
+require('dotenv').config();
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
