@@ -24,14 +24,21 @@
                     <label class="text-lg text-gray-600">
                         Registrant name
                     </label>
-                    <input v-model="order.name" placeholder="John Doe" name="name" class="bg-white rounded py-3 px-4 w-full mt-2 shadow">
+                    <input autocomplete="off" v-model="order.name" placeholder="John Doe" name="name" class="bg-white outline-none focus:shadow-outline rounded py-3 px-4 w-full mt-2 shadow">
+                </div>
+
+                <div class="my-4">
+                    <label class="text-lg text-gray-600">
+                        What's your mile time?
+                    </label>
+                    <input autocomplete="off" placeholder="8 minutes" v-model="order.mile_time" name="mile_time" class="outline-none focus:shadow-outline bg-white rounded py-3 px-4 w-full mt-2 shadow relative">
                 </div>
 
                 <div class="my-4">
                     <label class="text-lg text-gray-600">
                         Registrant email
                     </label>
-                    <input v-model="order.email" placeholder="johndoe@gmail.com" name="email" type="email" class="bg-white rounded py-3 px-4 w-full mt-2 shadow">
+                    <input autocomplete="off" v-model="order.email" placeholder="johndoe@gmail.com" name="email" type="email" class="bg-white outline-none focus:shadow-outline rounded py-3 px-4 w-full mt-2 shadow">
                 </div>
 
                 <div class="mt-8">
@@ -42,7 +49,7 @@
                 <div class="my-4 text-gray-600">
                     <p class="my-2 text-lg">Would you like to add on a t-shirt to your registration?</p>
                     <div class="flex">
-                        <button type="button" v-on:click="addShirtToOrder" class="bg-blue-500 hover:bg-blue-700 rounded my-auto px-4 py-2 text-white shadow">Yes, please!</button>
+                        <button type="button" v-on:click="addShirtToOrder" class="bg-blue-500 outline-none focus:shadow-outline hover:bg-blue-700 rounded my-auto px-4 py-2 text-white shadow">Yes, please!</button>
                     </div>
                 </div>
 
@@ -83,7 +90,7 @@
 
                         <div class="mt-4">
 
-                            <div class="p-4 bg-gray-100 shadow">
+                            <div class="p-4 shadow">
                                 <div ref="card">
                                     <!-- A Stripe Element will be inserted here. -->
                                 </div>
@@ -124,6 +131,7 @@
                 order: {
                     name: "",
                     email: "",
+                    mile_time: null,
                     payment_token: "",
                     hasShirt: false,
                     shirtSize: '',

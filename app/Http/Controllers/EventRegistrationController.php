@@ -42,6 +42,7 @@ class EventRegistrationController extends Controller
         $registration = $event->register([
             'name' => request('name'),
             'email' => request('email'),
+            'mile_time' => request('mile_time'),
             'user_id' => Auth::user()->id,
         ]);
 

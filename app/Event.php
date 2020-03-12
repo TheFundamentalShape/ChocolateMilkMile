@@ -22,6 +22,7 @@ class Event extends Model
         return $this->registrations()->create([
             'user_id' => $registrant['user_id'],
             'name' => $registrant['name'],
+            'mile_time' => $registrant['mile_time'],
             'email' => $registrant['email'],
         ]);
     }

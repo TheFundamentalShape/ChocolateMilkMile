@@ -82,7 +82,8 @@ class Registration extends Model
                 'checked_in_at' => $this->checked_in_at,
                 'registrant' => [
                     'name' => $this->name,
-                    'email' => $this->email
+                    'email' => $this->email,
+                    'mile_time' => $this->mile_time
                 ],
                 'shirt_order' => $this->shirtOrder,
                 'event' => $this->event
@@ -96,7 +97,8 @@ class Registration extends Model
             'checked_in_at' => $this->checked_in_at,
             'registrant' => [
                 'name' => $this->name,
-                'email' => $this->email
+                'email' => $this->email,
+                'mile_time' => $this->mile_time
             ],
             'event' => $this->event
         ];
