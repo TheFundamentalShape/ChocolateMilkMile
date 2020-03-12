@@ -48,7 +48,7 @@ class StripePaymentGateway implements PaymentGateway
             $registration->cancel();
 
             // throw a payment failed exception
-            throw new PaymentFailedException($exception);
+            throw new PaymentFailedException($apiErrorException);
         }
 
         return $registration->confirm();
