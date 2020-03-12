@@ -35,13 +35,20 @@ class StripePaymentGateway implements PaymentGateway
                 'source' => $token
             ]);
         }
-        catch (ApiErrorException $exception)
+        catch (CardException $exception)
         {
             // if it failed, cancel the registration
             $registration->cancel();
 
             // throw a payment failed exception
-            throw new PaymentFailedException();
+            throw new PaymentFailedException($exception);
+        }
+        catch (ApiErrorException $apiErrorException){
+            // if it failed, cancel the registration
+            $registration->cancel();
+
+            // throw a payment failed exception
+            throw new PaymentFailedException($exception);
         }
 
         return $registration->confirm();
