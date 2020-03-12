@@ -10,7 +10,7 @@
 
         <div class="pb-10">
             <h1 class="text-center text-5xl md:text-6xl text-brown fat-font">Here's some photos!</h1>
-            <p class="text-center text-gray-600 text-2xl skippy-font">(All of these beauties were taken by photographers <a class = "underline" href = "https://www.jaybendlinphoto.com/">Jay Blendin</a> and <a class="underline" href ="https://www.josephkhale.com/">Joseph Hale.</a>)</p>
+            <p class="text-center text-gray-600 text-2xl skippy-font">(All of these beauties were taken by photographers <a class = "underline" href = "https://www.jaybendlinphoto.com/">Jay Bendlin</a> and <a class="underline" href ="https://www.josephkhale.com/">Joseph Hale.</a>)</p>
         </div>
 
         <div class = "md:flex md:flex-wrap px-5">

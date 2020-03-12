@@ -55,7 +55,7 @@
                     <div>
                         <label class="skippy-font text-3xl pr-12" for="">What are ya inquiring about?</label>
                     </div>
-                    <textarea rows="4" placeholder="Does chocolate milk come from brown cows?" name="message" class="fat-font text-black-50 border rounded p-2 w-full">Confirmation Number: @if(isset($_GET['confirmationNumber'])){{ $_GET['confirmationNumber'] }}@endif</textarea>
+                    <textarea rows="4" placeholder="Does chocolate milk come from brown cows?" name="message" class="fat-font text-black-50 border rounded p-2 w-full">@if(isset($_GET['confirmationNumber']))Confirmation Number: {{ $_GET['confirmationNumber'] }}@endif</textarea>
                 </div>
 
                 <div class="my-8 flex justify-between">

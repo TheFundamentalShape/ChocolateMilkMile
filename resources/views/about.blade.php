@@ -14,7 +14,7 @@
                 struck and killed by a vehicle out on a training run. The
                 New York running community has always been very close,
                 and we all knew how genuinely kind and loving of a person
-                Noah was. Noah participated last year in the event, and
+                Noah was. Noah participated in this event in 2018, and
                 although we found that he did not have the strongest stomach,
                 gagging up most of the milk, you can tell from his smile
                 he had an amazing time. In an effort to spread Noah’s legacy
