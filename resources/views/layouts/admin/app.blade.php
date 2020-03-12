@@ -26,7 +26,7 @@
 
         <manager-nav></manager-nav>
 
-        <div class="mx-20 my-12">
+        <div class="mx-8 md:mx-20 my-12">
             @yield('content')
         </div>
 

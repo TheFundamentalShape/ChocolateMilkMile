@@ -26,8 +26,8 @@
 
         <registrant-nav></registrant-nav>
 
-        <div class="mx-20 my-12 flex justify-center">
-            <div class="max-w-2xl">
+        <div class="mx-8 md:mx-20 my-12 flex justify-center">
+            <div>
                 @yield('content')
             </div>
         </div>

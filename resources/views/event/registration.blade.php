@@ -28,7 +28,7 @@
 
     <registrant-nav></registrant-nav>
 
-    <div class="mx-20 my-12 flex justify-center">
+    <div class="mx-8 md:mx-20 my-12 flex justify-center">
         <div class="max-w-2xl">
             <h1 class="text-3xl lg:text-5xl md:text-4xl verygood-font">Awesome sauce. Here's the event that you're registering for.</h1>
 
