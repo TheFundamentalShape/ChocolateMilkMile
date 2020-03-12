@@ -12,6 +12,7 @@
 
             <navigation-link url="/home">Home</navigation-link>
             <navigation-link url="/registrations">Registrations</navigation-link>
+            <navigation-link url="/">Back to main site <i class="pl-1 fas fa-external-link-alt"></i></navigation-link>
 
         </div>
     </div>

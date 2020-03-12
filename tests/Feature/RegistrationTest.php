@@ -133,4 +133,5 @@ class RegistrationTest extends TestCase
         $this->assertEquals(0, $event->registrations->count());
         $this->assertEquals(0, $paymentGateway->getTotalCharges());
     }
+
 }

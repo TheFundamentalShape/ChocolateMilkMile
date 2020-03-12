@@ -22,7 +22,7 @@ class StripePaymentGateway implements PaymentGateway
         $this->totalCharges->add($registration->price);
 
         if($registration->hasShirtOrder()){
-            $this->totalCharges->add(1500);
+            $this->totalCharges->add(1300);
         }
 
         try

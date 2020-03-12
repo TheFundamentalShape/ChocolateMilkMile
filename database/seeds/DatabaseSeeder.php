@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
 
         \App\Event::create([
             'title' => 'Chocolate Milk Mile',
-            'fee' => 1500,
+            'fee' => 700,
             'location' => "BHBL High School",
             'date' => Carbon\Carbon::parse("+3 months")
         ]);

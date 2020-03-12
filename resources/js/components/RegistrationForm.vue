@@ -9,7 +9,11 @@
         </div>
 
         <div class="mt-8">
-            <form>
+            <form ref="payment-form" @submit.prevent="submitOrder" :action="registerUrl" method="post">
+
+                <input type="hidden" name="_token" :value="csrf" />
+                <input type="hidden" name="payment_token" v-model="order.payment_token" />
+                <input type="hidden" name="hasShirt" ref="payment-token" :value="order.hasShirt" />
 
                 <div class="mt-8">
                     <h1 class="verygood-font text-3xl">Personal Information</h1>
@@ -70,27 +74,34 @@
                 </div>
 
                 <div class="my-4">
-                    <div>
-                        <label class="text-lg text-gray-600">
-                            Credit or debit card
-                        </label>
+                    <div class="bg-white shadow rounded p-4">
+                        <h1 class="verygood-font text-2xl">Your Registration</h1>
 
-                        <div class="bg-white rounded p-4 mt-2 shadow">
-                            <div ref="card">
-                                <!-- A Stripe Element will be inserted here. -->
+                        <p class="my-2 p-4 rounded bg-green-100 text-green-500 border-2 border-green-500" v-if="order.hasShirt">Awesome! You're also getting a t-shirt with your registration! That's adds <b>$13.00</b> to your order's total. We appreciate it!</p>
+
+                        <p>Your order total is <b>${{ this.totalCost / 100 }}.00</b></p>
+
+                        <div class="mt-4">
+
+                            <div class="p-4 bg-gray-100 shadow">
+                                <div ref="card">
+                                    <!-- A Stripe Element will be inserted here. -->
+                                </div>
                             </div>
+                            <!-- Used to display Element errors. -->
+                            <div id="card-errors" role="alert"></div>
+
+                            <p class="text-gray-500 mt-4 leading-tight text-sm">By entering your credit card information and hitting "Register," your card will be charged the amount indicated above, and you will be registered for the race.</p>
                         </div>
-                        <!-- Used to display Element errors. -->
-                        <div id="card-errors" role="alert"></div>
-                    </div>
-                    <div>
-                        <button type="button" v-on:click="submitOrder" class="bg-blue-500 hover:bg-blue-700 w-1/3 rounded px-4 py-2 text-white mt-4 shadow">Register!</button>
+
                     </div>
                 </div>
 
-                <input type="hidden" name="_token" :value="csrf" />
-                <input type="hidden" name="payment_token" :value="order.payment_token" />
-                <input type="hidden" name="hasShirt" :value="order.hasShirt" />
+                <div class="my-4">
+                    <div>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 w-1/3 rounded px-4 py-2 text-white shadow">Register!</button>
+                    </div>
+                </div>
 
             </form>
 
@@ -109,12 +120,14 @@
         data() {
             return {
                 registerUrl: '/events/' + this.event.id + "/register",
+                totalCost: this.event.fee,
+                errors: {},
                 order: {
                     name: "",
                     email: "",
                     payment_token: "",
                     hasShirt: false,
-                    shirtSize: null,
+                    shirtSize: '',
                 },
             }
         },
@@ -122,6 +135,7 @@
             addShirtToOrder() {
                 if(this.order.hasShirt == false) {
                     this.order.hasShirt = true;
+                    this.totalCost += 1300;
                 }
             },
 
@@ -129,27 +143,18 @@
                 if(this.order.hasShirt == true){
                     this.order.hasShirt = false;
                     this.order.shirtSize = null;
+                    this.totalCost -= 1300;
                 }
             },
 
             submitOrder() {
 
                 stripe.createToken(card).then(result => {
-
                     this.order.payment_token = result.token.id;
-                    // this.$refs['payment-form'].submit();
-
-                    axios({
-                        method: 'post',
-                        url: this.registerUrl,
-                        data: this.order
-                    })
-                        .then(response => {
-                            console.log(response);
-                        })
-                        .catch(reason => {
-                            console.log(reason);
-                        });
+                }).catch(error => {
+                    console.log(error);
+                }).finally(() => {
+                    this.$refs['payment-form'].submit();
                 });
 
             }

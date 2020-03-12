@@ -33,13 +33,20 @@
             <h1 class="text-3xl lg:text-5xl md:text-4xl verygood-font">Awesome sauce. Here's the event that you're registering for.</h1>
 
             @if($errors->any())
-                <div class="mt-4 bg-red-500 rounded p-4 shadow text-white">
+                <div class="mt-4 bg-red-100 text-red-500 border-2 border-red-500 rounded p-4">
                     <h3 class="text-xl verygood-font">Something went wrong...</h3>
                     <ul>
                         @foreach($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
+                </div>
+            @endif
+
+            @if(session()->has('payment_error'))
+                <div class="mt-4 bg-red-100 text-red-500 border-2 border-red-500 rounded p-4">
+                    <h3 class="text-xl verygood-font">Well this is awkward...</h3>
+                    <p>Your card didn't go through. Maybe try again? Maybe call for help? We're not quite sure.</p>
                 </div>
             @endif
 

@@ -32,8 +32,6 @@ class EventRegistrationController extends Controller
 
     public function post(Event $event)
     {
-        // dd(\request()->all());
-
         $this->validate(request(), [
             'name' => 'required|string',
             'email' => 'required|email|unique:registrations',
@@ -47,7 +45,7 @@ class EventRegistrationController extends Controller
             'user_id' => Auth::user()->id,
         ]);
 
-        if(request()->has('hasShirt') && request('hasShirt') == true)
+        if(request()->has('hasShirt') && request()->has('shirtSize') && request('hasShirt') == "true")
         {
             $registration->orderShirt(request('shirtSize'));
         }

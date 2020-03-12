@@ -15,7 +15,8 @@ class ManagementPageController extends Controller
     public function index()
     {
         return view('admin.home', [
-            'events' => Event::all()
+            'events' => Event::all(),
+            'totalRevenue' => 400 // call for total stripe balance from API... later lol.
         ]);
     }
 

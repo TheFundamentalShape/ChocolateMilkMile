@@ -14,12 +14,12 @@
 
         <div class="w-full my-2 md:my-0 md:mx-4 rounded p-4 bg-white shadow">
             <h3 class="">Total Registrants</h3>
-            <p class="verygood-font my-2 text-3xl">167</p>
+            <p class="verygood-font my-2 text-3xl">{{ App\Registration::all()->count() }}</p>
         </div>
 
         <div class="w-full my-2 md:my-0 md:ml-4 rounded p-4 bg-white shadow">
             <h3 class="">Total Revenue</h3>
-            <p class="verygood-font my-2 text-3xl">$300.50</p>
+            <p class="verygood-font my-2 text-3xl">{{ $totalRevenue }}</p>
         </div>
     </div>
 @endsection
