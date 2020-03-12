@@ -4,9 +4,9 @@
     <div class="md:flex md:justify-between">
 
         <div class="bg-white rounded shadow p-4 w-full md:w-1/3">
-            <h1 class="hidden md:block verygood-font text-xl">Scan QR Code</h1>
-            <h1 class="md:hidden verygood-font text-xl">Enter Confirmation Code</h1>
-            <div class="hidden md:block my-2">
+            <h1 class="verygood-font text-xl">Scan QR Code</h1>
+            <h1 class="verygood-font text-gray-500 text-sm">or enter confirmation code</h1>
+            <div class="my-2">
                 <qrcode-stream @decode="onDecode"></qrcode-stream>
                 <p class="text-sm text-gray-500 text-center font-semibold my-4">OR</p>
             </div>
