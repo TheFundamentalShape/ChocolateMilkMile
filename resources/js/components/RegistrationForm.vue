@@ -111,7 +111,7 @@
 
 <script>
 
-    let stripe = Stripe("pk_test_npgHJYXNKJ7Z0bm9RkGGUQa600nY0T59kW"),
+    let stripe = Stripe(process.env.MIX_STRIPE_KEY),
         elements = stripe.elements(),
         card = undefined;
 
