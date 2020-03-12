@@ -5,6 +5,7 @@ namespace App\Billing;
 use App\Registration;
 use App\Exceptions\PaymentFailedException;
 
+use Stripe\Exception\ApiErrorException;
 use Stripe\Exception\CardException;
 use Stripe\Stripe;
 
@@ -34,7 +35,7 @@ class StripePaymentGateway implements PaymentGateway
                 'source' => $token
             ]);
         }
-        catch (CardException $exception)
+        catch (ApiErrorException $exception)
         {
             // if it failed, cancel the registration
             $registration->cancel();
