@@ -32,7 +32,7 @@ class StripePaymentGateway implements PaymentGateway
                 'amount' => $this->totalCharges->sum(),
                 'currency' => 'usd',
                 'description' => 'Event Registration Fee',
-                'source' => $token
+                'source' => $token,
             ]);
         }
         catch (CardException $exception)
