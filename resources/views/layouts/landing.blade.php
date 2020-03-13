@@ -31,6 +31,7 @@
                                 <div class="hover:bg-dark-brown {{ Route::currentRouteNamed('landing.home') ? 'bg-dark-brown' : '' }} rounded-l-lg py-4"><a class="mx-4 fat-font" href="/">Home</a></div>
                                 <div class="hover:bg-dark-brown {{ Route::currentRouteNamed('landing.about') ? 'bg-dark-brown' : '' }} py-4"><a class="mx-4 fat-font" href="/about">About</a></div>
                                 <div class="hover:bg-dark-brown {{ Route::currentRouteNamed('landing.photos') ? 'bg-dark-brown' : '' }} py-4"><a class="mx-4 fat-font" href="/photos">Photos</a></div>
+                                <div class="hover:bg-dark-brown {{ Route::currentRouteNamed('login') ? 'bg-dark-brown' : '' }} py-4"><a class="mx-4 fat-font" href="/login">Login</a></div>
                                 <div class="hover:bg-dark-brown {{ Route::currentRouteNamed('register') ? 'bg-dark-brown' : '' }} rounded-r-lg py-4"><a class="mx-4 fat-font" href="/register">Register</a></div>
                             </div>
 
@@ -44,6 +45,7 @@
                                     <div class="hover:bg-dark-brown {{ Route::currentRouteNamed('landing.home') ? 'bg-dark-brown' : '' }} py-4"><a href="/" class="px-4 fat-font">Home</a></div>
                                     <div class="hover:bg-dark-brown {{ Route::currentRouteNamed('landing.about') ? 'bg-dark-brown' : '' }} py-4"><a href="/about" class="px-4 fat-font">About</a></div>
                                     <div class="hover:bg-dark-brown {{ Route::currentRouteNamed('landing.photos') ? 'bg-dark-brown' : '' }} py-4"><a href="/photos" class="px-4 fat-font">Photos</a></div>
+                                    <div class="hover:bg-dark-brown {{ Route::currentRouteNamed('login') ? 'bg-dark-brown' : '' }} py-4"><a href="/login" class="px-4 fat-font">Login</a></div>
                                     <div class="hover:bg-dark-brown {{ Route::currentRouteNamed('landing.register') ? 'bg-dark-brown' : '' }} py-4"><a href="/register" class="px-4 fat-font">Register</a></div>
                                 </div>
 
