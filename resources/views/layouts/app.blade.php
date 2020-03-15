@@ -21,6 +21,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <script src="https://kit.fontawesome.com/825a6bb202.js" crossorigin="anonymous"></script>
 
+    <style>
+        @import url("https://use.typekit.net/pkr6dis.css");
+    </style>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
