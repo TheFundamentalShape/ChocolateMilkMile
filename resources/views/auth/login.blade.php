@@ -33,14 +33,14 @@
                     <div>
                         <label class="skippy-font text-3xl pr-12" for="">What is your email?</label>
                     </div>
-                    <input class="fat-font border rounded p-2 w-full" type="email" name="email">
+                    <input class="border rounded p-2 w-full" type="email" name="email">
                 </div>
 
                 <div class="my-8">
                     <div>
                         <label class="skippy-font text-3xl pr-12" for="">What is your password?</label>
                     </div>
-                    <input class="fat-font border rounded p-2 w-full" type="password" name="password">
+                    <input class="border rounded p-2 w-full" type="password" name="password">
                 </div>
 
                 <div class="my-8 flex justify-between">

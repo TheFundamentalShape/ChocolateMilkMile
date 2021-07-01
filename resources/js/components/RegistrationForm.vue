@@ -43,7 +43,7 @@
 
                 <div class="mt-8">
                     <h1 class="verygood-font text-3xl">Addons</h1>
-                    <p class="my-2 text-lg text-gray-600">This registration has several addons you can choose from. See if there's anything you might be interested in!</p>
+                    <p class="my-2 text-lg text-gray-600">This event also has optional goodies that you can add onto your registration. See if there's anything you might be interested in! Any addon you opt-in for will be given to you at check-in on the day of the event.</p>
                 </div>
 
                 <div class="my-4 text-gray-600">
@@ -77,7 +77,7 @@
 
                 <div class="mt-8">
                     <h1 class="verygood-font text-3xl">Payment Information</h1>
-                    <p class="my-2 text-lg text-gray-600">All that's left is for you to pay for your registration! Make sure your registration looks good, and then checkout! You'll be good to go once you do!</p>
+                    <p class="my-2 text-lg text-gray-600">Grab your wallet! The last thing we need from you are the payment details!</p>
                 </div>
 
                 <div class="my-4">

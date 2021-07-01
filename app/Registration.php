@@ -21,7 +21,7 @@ class Registration extends Model
         return $this->belongsTo(Event::class);
     }
 
-    // returns the ShirtOrders
+    // returns the ShirtOrder
     public function shirtOrder(){
         return $this->hasOne(ShirtOrder::class);
     }

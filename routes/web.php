@@ -12,19 +12,19 @@
 */
 
 use Illuminate\Http\Request;
+use App\Registration;
+use App\Event;
+use App\Events\RegistrantCheckedIn;
+use App\Exceptions\AlreadyCheckedInException;
 
 Route::get('/', function () {
     return view('welcome');
 })->name("landing.home");
-
 Route::get('/contact', 'ContactSubmissionController@create')->name("landing.contact");
-
 Route::post('/contact', 'ContactSubmissionController@post')->name("landing.contact.post");
-
 Route::get('/about', function () {
     return view('about');
 })->name("landing.about");
-
 Route::get('/photos', function () {
     return view('photos');
 })->name("landing.photos");
@@ -59,36 +59,39 @@ Route::middleware(['manager'])->group(function (){
     Route::get('/manager/events/create', 'EventController@create');
     Route::post('/manager/events/create', 'EventController@post');
 
-    Route::get('/manager/check-in', 'ManagementPageController@checkin');
     Route::get('/manager/registrants', 'RegistrantController@index');
-
     Route::post('/manager/registrants', function (Request $request){
-        return App\Registration::confirmed()->where('event_id', $request->event_id)->get();
+        return Registration::confirmed()->where('event_id', $request->event_id)->get();
     });
 
+    Route::get('/manager/check-in', 'ManagementPageController@checkin');
     Route::post('/manager/check-in', function (Request $request){
         try {
-            $registration = App\Registration::where('confirmation_number', $request->confirmation_number)->firstOrFail()->checkIn();
+
+            $registration = Registration::where('confirmation_number', $request->confirmation_number)
+                ->firstOrFail()
+                ->checkIn();
+
             $event = $registration->event;
 
-            event(new App\Events\RegistrantCheckedIn($registration));
+            event(new RegistrantCheckedIn($registration));
 
             return [
                 'registration' => $registration,
                 'event' => $event
             ];
-        } catch (\App\Exceptions\AlreadyCheckedInException $exception){
+        } catch (AlreadyCheckedInException $exception){
             return response([
-                'error' => 'You are already checked in.',
+                'error' => 'This registrant is already checked in.',
             ], 422);
         }
     });
 
-});
-
-// Admin End Api
-Route::middleware(['manager'])->group(function (){
-    Route::get('/manager/api/event/{event}/registrants', function(App\Event $event){
+    Route::get('/manager/api/event/{event}/registrants', function(Event $event){
         return $event->registrations;
     });
+    Route::get('/manager/api/confirmation/{confirmationNumber}', function ($confirmationNumber){
+        return Registration::where('confirmation_number', $confirmationNumber)->firstOrFail();
+    });
+
 });

@@ -61,11 +61,6 @@ class EventRegistrationController extends Controller
             return back()->with('payment_error', 'Uh-oh! Your payment failed. Try again? If that fails, contact us!');
         }
 
-        //return view('event.confirmation', [
-        //    'registration' => $registration,
-        //    'event' => $event
-        //]);
-
         return redirect(route('registration.confirmation', [$event, $registration]));
     }
 }

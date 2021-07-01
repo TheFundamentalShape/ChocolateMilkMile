@@ -39,7 +39,7 @@
         },
         data() {
             return {
-                event: null,
+                event: [],
                 registrations: [],
             }
         },

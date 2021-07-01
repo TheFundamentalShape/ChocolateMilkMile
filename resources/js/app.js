@@ -68,10 +68,10 @@ const app = new Vue({
         onDecode (confirmationNumber) {
             this.confirmation_number = confirmationNumber;
             axios
-                .get('/api/confirmation/' + this.confirmation_number)
+                .get('/manager/api/confirmation/' + this.confirmation_number)
                 .then(response => {
                     this.event = response.data.event;
-                    this.registration = response.data.registration;
+                    this.registration = response.data;
                 })
                 .catch(error => {
 

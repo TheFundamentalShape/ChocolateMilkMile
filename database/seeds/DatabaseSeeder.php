@@ -14,15 +14,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        factory(User::class)->state('admin')->create([
+        $user = factory(User::class)->state('admin')->create([
             'email' => 'him@theluigi.com',
+            'name' => 'Luigi Battaglioli'
         ]);
 
-        \App\Event::create([
+        $event = \App\Event::create([
             'title' => 'Chocolate Milk Mile',
             'fee' => 700,
             'location' => "BHBL High School",
             'date' => Carbon\Carbon::parse("+3 months")
         ]);
+
     }
 }

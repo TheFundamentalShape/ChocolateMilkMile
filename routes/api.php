@@ -17,22 +17,6 @@ use App\Events\RegistrantCheckedIn;
 |
 */
 
-
-Route::get('/confirmation/{confirmationNumber}', function ($confirmationNumber){
-    $registration = Registration::where('confirmation_number', $confirmationNumber)->firstOrFail();
-    $event = $registration->event;
-
-    return [
-        'registration' => $registration,
-        'event' => $event
-    ];
-});
-
-
 Route::get('/events', function (){
     return Event::all();
-});
-
-Route::middleware('auth:api')->get('/registrations', function (Request $request){
-    return $request->user()->registrations()->get();
 });

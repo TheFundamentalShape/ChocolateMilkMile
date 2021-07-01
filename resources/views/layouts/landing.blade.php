@@ -23,7 +23,7 @@
             <div class="flex justify-center">
                 <div class="text-center -mt-40 md:-mt-56">
                     <h1 class="fat-font text-4xl md:text-6xl text-brown relative"><span class="tilty absolute skippy-font text-3xl -mt-6 -ml-3 md:-mt-4 md:-ml-3 md:top-0 md:left-0">the</span> Chocolate Milk Mile</h1>
-                    <h3 class="fat-font my-1 text-2xl md:text-3xl text-brown">August 1st, 2020 @ The BHBL High School</h3>
+                    <h3 class="fat-font my-1 text-2xl md:text-3xl text-brown">July 31st, 2021 @ The BHBL High School</h3>
                     <p class="px-3 text-brown skippy-font text-xl">(to celebrate the life of Noah Farrelly who really loved running. And chocolate milk.)</p>
                     <div class="mt-10">
                         <div class="flex justify-center z-50">
